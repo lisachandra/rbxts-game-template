@@ -17,6 +17,8 @@ minimumReleaseAgeExclude:
     - "@lisachandra/react-router@1.0.1"
     - "@lisachandra/react-template@1.0.0"
     - "@lisachandra/ui@0.1.1"
+    - "@yuku-toolchain/types@0.8.3"
+    - "yuku-ast@0.8.3"
 
 publicHoistPattern:
     - "*@rbxts*"
