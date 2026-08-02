@@ -13,6 +13,7 @@ minimumReleaseAgeExclude:
   - '@lisachandra/platform@0.1.0 || 0.1.1'
   - '@lisachandra/test@0.1.0 || 0.1.1'
   - '@lisachandra/types@0.1.0 || 0.1.1'
+  - '@lisachandra/sandcastle@0.2.0'
 
 publicHoistPattern:
   - "*@rbxts*"
