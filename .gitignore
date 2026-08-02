@@ -310,3 +310,6 @@ packages/@lisachandra/**/src
 # Brainstorm prototype generated state
 .superpowers/**/state/
 *.tsbuildinfo
+
+# Sparse checkout of roblox/creator-docs, junctioned into the repo root
+creator-docs/
