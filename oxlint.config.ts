@@ -137,6 +137,7 @@ export default isentinel(
 			"arrow-style/arrow-return-style": "off",
 			"comment-length/limit-multi-line-comments": "off",
 			"comment-length/limit-single-line-comments": "off",
+			"eslint-js/id-length": "off",
 			"eslint-js/no-restricted-syntax": noRestrictedSyntaxRule,
 			"eslint/max-lines": "off",
 			"eslint/max-lines-per-function": "off",
@@ -386,6 +387,7 @@ export default isentinel(
 		files: ["packages/**/*"],
 		name: "project/packages-overrides",
 		rules: {
+			"eslint-js/id-length": "off",
 			"eslint-js/no-restricted-syntax": noRestrictedSyntaxRule,
 			"typescript/no-extraneous-class": "off",
 			"typescript/no-unnecessary-type-parameters": "off",
@@ -396,6 +398,7 @@ export default isentinel(
 		files: [`!src/${GLOB_SRC}, ${GLOB_SRC}`],
 		name: "project/non-roblox",
 		rules: {
+			"eslint-js/id-length": "off",
 			"eslint-js/no-restricted-syntax": "off",
 			"roblox/lua-truthiness": "off",
 			"roblox/misleading-lua-tuple-checks": "off",
