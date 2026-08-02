@@ -1,0 +1,12 @@
+diff --git a/src/init.luau b/src/init.luau
+index 4d06b48041d00abe11c9b264cecf777083f1f9d0..a0bb83669950e8a9799b8087f898edb0913fa8cb 100644
+--- a/src/init.luau
++++ b/src/init.luau
+@@ -22,6 +22,7 @@ local UpdateMovementThread = coroutine.create(UpdateMovement)
+ 
+ local Cache = {}
+ Cache.__index = Cache
++Cache.__type = "PartCache"
+ 
+ function Cache:_GetNew(Amount: number, Warn: boolean)
+ 	if Warn then

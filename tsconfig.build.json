@@ -1,0 +1,32 @@
+{
+	"extends": "@isentinel/tsconfig/roblox",
+	"compilerOptions": {
+		"composite": true,
+		"tsBuildInfoFile": "${configDir}/out/tsconfig.tsbuildinfo",
+		"customConditions": ["source"],
+		"module": "preserve",
+		"moduleResolution": "bundler",
+		"paths": {
+			"*": ["./src/*"]
+		},
+		"typeRoots": ["${configDir}/node_modules/@rbxts", "${configDir}/node_modules/@lisachandra"],
+		"types": [
+			"../@rbxts/types",
+			"../@rbxts/services",
+			"../@rbxts/compiler-types",
+			"../@lisachandra/types"
+		],
+		"exactOptionalPropertyTypes": false,
+		"noPropertyAccessFromIndexSignature": false,
+		"declaration": true,
+		"downlevelIteration": null,
+		"sourceMap": true,
+		"preserveSymlinks": true
+	},
+	"files": [],
+	"include": [
+		"${configDir}/src/**/*.ts",
+		"${configDir}/src/**/*.tsx",
+		"${configDir}/src/**/*.json"
+	]
+}

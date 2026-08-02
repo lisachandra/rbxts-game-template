@@ -1,0 +1,104 @@
+# yaml-language-server:
+# $schema=https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+
+version: "0.2"
+language: en
+
+import:
+    - "@isentinel/dict-roblox"
+    - "@isentinel/dict-rbxts"
+    - "@isentinel/dict-wally"
+
+words:
+    - acked
+    - barrelsby
+    - browsable
+    - cframe
+    - codegen
+    - cooldown
+    - cooldowns
+    - csts
+    - darklua
+    - deadzone
+    - dequantize
+    - despawn
+    - despawned
+    - despawning
+    - despawns
+    - diracrules
+    - drawcall
+    - fenv
+    - freelook
+    - gameplay
+    - getfenv
+    - getmetatable
+    - hitboxes
+    - hotbar
+    - inspectable
+    - ipairs
+    - kapouer
+    - kbps
+    - keybind
+    - keybinds
+    - keyhint
+    - keypoints
+    - lerping
+    - lerps
+    - lifecycles
+    - lisachandra
+    - lockon
+    - lucide
+    - mapify
+    - mbps
+    - metatable
+    - microprofiler
+    - mklink
+    - mult
+    - navitem
+    - npcs
+    - nrbx
+    - oxlint
+    - pathfind
+    - pcall
+    - rbxasset
+    - rbxassetid
+    - rbxgameasset
+    - rbxl
+    - readf
+    - readu
+    - redu
+    - regen
+    - replicated
+    - respawning
+    - rojo
+    - scriptable
+    - serdes
+    - setfenv
+    - setmetatable
+    - spellchecker
+    - sprt
+    - sts
+    - substate
+    - substates
+    - thumbstick
+    - tsgolint
+    - udim
+    - unacked
+    - unban
+    - unbans
+    - uncollapsed
+    - unequip
+    - unequipping
+    - unreplicated
+    - unreviewed
+    - viewmodel
+    - viewmodels
+    - walkspeed
+    - worktree
+    - worktrees
+    - writef
+    - writeu
+    - xhigh
+    - xpbar
+    - xprod
+    - zcode

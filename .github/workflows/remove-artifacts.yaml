@@ -1,0 +1,32 @@
+name: Remove Artifacts
+
+on:
+  workflow_run:
+    workflows: [Continuous Integration]
+    types:
+      - completed
+
+permissions:
+  actions: write
+
+jobs:
+  delete-artifact:
+    name: Delete Artifact
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        id: get-artifact-id
+        name: Get Artifact Id
+        run: |
+          echo "artifact_id=$(gh api -H 'Accept: application/vnd.github+json' ${{ github.event.workflow_run.artifacts_url }} --jq .artifacts[].id)" >> $GITHUB_OUTPUT
+
+      - env:
+          ARTIFACT_ID: ${{ steps.get-artifact-id.outputs.artifact_id }}
+          GH_TOKEN: ${{ github.token }}
+        id: delete-artifact
+        name: Delete Artifact
+        run: |
+          echo "artifact id is ${{ env.ARTIFACT_ID }}"
+          echo "run url is ${{ github.event.workflow_run.artifacts_url }}"
+          gh api --method DELETE -H 'Accept: application/vnd.github+json' /repos/${{ github.repository }}/actions/artifacts/${{ env.ARTIFACT_ID }}

@@ -1,0 +1,22 @@
+diff --git a/src/clientProcessor.meta.json b/src/clientProcessor.meta.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..5077db135e537a06db2623f7ef210d0778894252
+--- /dev/null
++++ b/src/clientProcessor.meta.json
+@@ -0,0 +1,5 @@
++{
++	"properties": {
++		"Disabled": true
++	}
++}
+diff --git a/src/serverProcessor.meta.json b/src/serverProcessor.meta.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..5077db135e537a06db2623f7ef210d0778894252
+--- /dev/null
++++ b/src/serverProcessor.meta.json
+@@ -0,0 +1,5 @@
++{
++	"properties": {
++		"Disabled": true
++	}
++}

@@ -1,0 +1,105 @@
+{
+	"name": "rbxts-game-template",
+	"globIgnorePaths": ["**/package.json", "**/tsconfig.json"],
+	"emitLegacyScripts": false,
+	"tree": {
+		"$className": "DataModel",
+		"Players": {
+			"$properties": {
+				"CharacterAutoLoads": false
+			}
+		},
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"TS": {
+				"$className": "Folder",
+				"rbxts_include": {
+					"$className": "Folder",
+					"node_modules": {
+						"$path": "packages/@internal/shared/node_modules"
+					}
+				},
+				"client": {
+					"$path": "out/client"
+				},
+				"shared": {
+					"$path": "out/shared"
+				},
+				"test": {
+					"$path": "out/test"
+				}
+			}
+		},
+		"ServerScriptService": {
+			"$className": "ServerScriptService",
+			"$properties": {
+				"LoadStringEnabled": true
+			},
+			"TS": {
+				"$className": "Folder",
+				"rbxts_include": {
+					"$className": "Folder",
+					"node_modules": {
+						"$path": "packages/@internal/server/node_modules"
+					}
+				},
+				"server": {
+					"$path": "out/server"
+				}
+			}
+		},
+		"ServerStorage": {
+			"$className": "ServerStorage",
+			"Maps": {
+				"$className": "Folder"
+			}
+		},
+		"SoundService": {
+			"$properties": {
+				"RespectFilteringEnabled": true
+			},
+			"Sounds": {
+				"$className": "Folder"
+			}
+		},
+		"StarterPlayer": {
+			"StarterCharacterScripts": {
+				"$className": "StarterCharacterScripts",
+				"Animate": {
+					"$className": "LocalScript",
+					"$properties": {
+						"Disabled": true
+					}
+				},
+				"Health": {
+					"$className": "Script",
+					"$properties": {
+						"Disabled": true
+					}
+				}
+			},
+			"StarterPlayerScripts": {
+				"$className": "StarterPlayerScripts",
+				"PlayerModule": {
+					"$path": "out/client/player.client.luau"
+				}
+			}
+		},
+		"Workspace": {
+			"$properties": {
+				"FilteringEnabled": true,
+				"SignalBehavior": "Deferred",
+				"StreamingEnabled": true
+			},
+			"Characters": {
+				"$className": "Folder"
+			},
+			"Maps": {
+				"$className": "Folder"
+			},
+			"Models": {
+				"$className": "Folder"
+			}
+		}
+	}
+}

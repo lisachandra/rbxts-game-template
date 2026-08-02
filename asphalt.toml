@@ -1,0 +1,14 @@
+[creator]
+type = "user"
+# TODO: replace with your Roblox user id
+id = 0
+
+[codegen]
+output_name = "asphalt"
+typescript = true
+style = "nested"
+strip_extensions = true
+
+[inputs.assets]
+path = "assets/**"
+output_path = "src/shared/assets/export"

@@ -1,0 +1,13 @@
+diff --git a/out/Error/Error.global.luau b/out/Error/Error.global.luau
+index 7b199084b1f6babbc53a480e98ddc647394f31e7..869d4dc3ab9b47d7a9e26e5c712fa5b88e8128b9 100644
+--- a/out/Error/Error.global.luau
++++ b/out/Error/Error.global.luau
+@@ -74,7 +74,7 @@ return setmetatable(Error, {
+ 	__tostring = function(self)
+ 		if self.name ~= nil then
+ 			if self.message and self.message ~= "" then
+-				return string.format("%*: %*", tostring(self.name), tostring(self.message))
++				return `{string.format("%*: %*", tostring(self.name), tostring(self.message))}\n{self.stack}`
+ 			end
+ 			return tostring(self.name)
+ 		end

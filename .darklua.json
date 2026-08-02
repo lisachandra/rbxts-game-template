@@ -1,0 +1,37 @@
+{
+	"generator": "readable",
+	"rules": [
+		{
+			"rule": "inject_global_value",
+			"identifier": "__VERSION__",
+			"value": "0.1.0"
+		},
+		{
+			"rule": "inject_global_value",
+			"identifier": "__PROD__",
+			"value": true
+		},
+		{
+			"rule": "remove_comments",
+			"except": ["^--!"]
+		},
+		{
+			"rule": "rename_variables",
+			"globals": ["$default", "$roblox"],
+			"include_functions": true
+		},
+		"remove_spaces",
+		"remove_assertions",
+		"compute_expression",
+		"remove_unused_if_branch",
+		"remove_unused_while",
+		"filter_after_early_return",
+		"remove_empty_do",
+		"remove_unused_variable",
+		"remove_debug_profiling",
+		"remove_method_definition",
+		"convert_index_to_field",
+		"remove_nil_declaration",
+		"remove_function_call_parens"
+	]
+}

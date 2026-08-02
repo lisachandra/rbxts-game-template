@@ -1,0 +1,13 @@
+{
+	"name": "server",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"dependencies": {
+		"@rbxts/luau-polyfill": "catalog:",
+		"@rbxts/matter": "catalog:",
+		"@rbxts/services": "catalog:",
+		"@rbxts/tether": "catalog:"
+	},
+	"hoist": false
+}

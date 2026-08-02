@@ -1,0 +1,13 @@
+diff --git a/defaults.js b/defaults.js
+index 9cf40e0340aae028f3cfff7af0c7ca4e1c5685eb..0a6fc6283f1a2be9b0e04074c88bceaefea93bd3 100644
+--- a/defaults.js
++++ b/defaults.js
+@@ -1,7 +1,7 @@
+ const spec = require('conventional-changelog-config-spec');
+ 
+ const defaults = {
+-  infile: 'CHANGELOG.md',
++  infile: '.github/CHANGELOG.md',
+   firstRelease: false,
+   sign: false,
+   signoff: false,

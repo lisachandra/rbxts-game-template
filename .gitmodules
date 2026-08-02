@@ -1,0 +1,12 @@
+[submodule "submodules/flux"]
+	path = submodules/flux
+	url = https://github.com/christopher-buss/flux
+	branch = main
+[submodule "submodules/jest-roblox-cli"]
+	path = submodules/jest-roblox-cli
+	url = https://github.com/lisachandra/jest-roblox-cli
+	branch = fork/v0.3.9-custom
+[submodule "submodules/naming-standard"]
+	path = submodules/naming-standard
+	url = https://github.com/unified-naming-convention/NamingStandard
+	branch = main

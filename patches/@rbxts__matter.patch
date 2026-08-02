@@ -1,0 +1,62 @@
+diff --git a/lib/Loop.d.ts b/lib/Loop.d.ts
+index 78041b064d1b169f21dfcae50e73dc318f6ddc67..63250ad94716fe83fc0b8dd65830d56570662ed1 100644
+--- a/lib/Loop.d.ts
++++ b/lib/Loop.d.ts
+@@ -1,11 +1,11 @@
+ type SystemFn<T extends Array<unknown>> = (...params: T) => void;
+
+-export type SystemStruct<T extends Array<unknown>> = {
++export interface SystemStruct<T extends Array<unknown>> {
+ 	system: SystemFn<T>;
+ 	event?: string;
+ 	priority?: number;
+ 	after?: Array<SystemFn<T> | SystemStruct<T>>;
+-};
++}
+
+ export type System<T extends Array<unknown>> = SystemFn<T> | SystemStruct<T>;
+
+@@ -149,7 +149,7 @@ export class Loop<T extends Array<unknown>> {
+ 	 * @param events - A map from event name to event objects.
+ 	 * @return A map from your event names to connection objects.
+ 	 */
+-	public begin<T extends { [index: string]: RBXScriptSignal }>(events: T): { [P in keyof T]: RBXScriptConnection };
++	public begin<T extends Record<NonNullable<SystemStruct<Array<unknown>>["event"]> | "default", RBXScriptSignal>>(events: T): { [P in keyof T]: RBXScriptConnection };
+
+ 	/**
+ 	 * Adds a user-defined middleware function that is called during each frame.
+diff --git a/lib/hooks/useEvent.d.ts b/lib/hooks/useEvent.d.ts
+index 269a7c3eab0bfe779b26c4e9ac3423c3b4f25266..ee5e3c687e388957fa72d8f29eec51128a0aabfe 100644
+--- a/lib/hooks/useEvent.d.ts
++++ b/lib/hooks/useEvent.d.ts
+@@ -22,4 +22,9 @@ declare function useEvent<A extends Array<unknown>, E extends SignalLike<A>>(
+ 	event: E,
+ ): IterableFunction<LuaTuple<[index: number, ...rest: InferSignalParameters<E>]>>;
+
++declare function useEvent<T extends object, A extends Array<unknown>, E extends T[E] extends SignalLike<A> ? keyof T : never>(
++	object: T,
++	eventKey: E
++): IterableFunction<LuaTuple<[index: number, ...rest: InferSignalParameters<T[E]>]>>;
++
+ export = useEvent;
+diff --git a/package.json b/package.json
+index 944d8218d541b3598b959fe70944b3c59338dce3..8514558c5467e624f14cf62af9ccffe4870272da 100644
+--- a/package.json
++++ b/package.json
+@@ -3,6 +3,16 @@
+   "version": "0.8.5",
+   "description": "",
+   "main": "lib/init.lua",
++  "exports": {
++    ".": {
++      "import": "./lib/init.lua",
++      "types": "./lib/index.d.ts"
++    },
++    "./lib/topoRuntime": {
++      "import": "./lib/topoRuntime.luau",
++      "types": "./lib/topoRuntime.d.ts"
++    }
++  },
+   "repository": {
+     "type": "git",
+     "url": "https://github.com/ukendio/matter.git"

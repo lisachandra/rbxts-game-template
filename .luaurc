@@ -1,0 +1,18 @@
+{
+	"languageMode": "nonstrict",
+	"lintErrors": false,
+	"lint": {
+		"*": true,
+		"LocalShadow": false
+	},
+	"globals": [
+		"warn"
+	],
+	"aliases": {
+		"lune": "~/.lune/.typedefs/0.10.4/",
+		"batteries": "~/.lute/typedefs/1.0.0/batteries",
+		"lint": "~/.lute/typedefs/1.0.0/lint",
+		"lute": "~/.lute/typedefs/1.0.0/lute",
+		"std": "~/.lute/typedefs/1.0.0/std"
+	}
+}

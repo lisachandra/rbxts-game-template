@@ -1,0 +1,24 @@
+{
+	"name": "shared",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"dependencies": {
+		"@flamework/core": "catalog:",
+		"@lisachandra/constant": "catalog:",
+		"@lisachandra/core": "catalog:",
+		"@lisachandra/matter": "catalog:",
+		"@lisachandra/test": "catalog:",
+		"@lisachandra/types": "catalog:",
+		"@rbxts/compiler-types": "catalog:",
+		"@rbxts/flux": "file:..\\..\\..\\submodules\\flux\\packages\\core",
+		"@rbxts/jest": "catalog:",
+		"@rbxts/jest-globals": "catalog:",
+		"@rbxts/luau-polyfill": "catalog:",
+		"@rbxts/matter": "catalog:",
+		"@rbxts/serio": "catalog:",
+		"@rbxts/services": "catalog:",
+		"@rbxts/tether": "catalog:",
+		"@rbxts/types": "catalog:"
+	}
+}

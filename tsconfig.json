@@ -1,0 +1,27 @@
+{
+	"extends": "./tsconfig.build.json",
+	"compilerOptions": {
+		"typeRoots": [
+			"${configDir}/node_modules/@rbxts",
+			"${configDir}/node_modules/@flamework",
+			"${configDir}/node_modules/@nrbx",
+			"${configDir}/node_modules/@lisachandra"
+		],
+		"plugins": [
+			{
+				"transform": "rbxts-transformer-flamework"
+			}
+		]
+	},
+	"references": [
+		{
+			"path": "./tsconfig.node.json"
+		}
+	],
+	"rbxts": {
+		"runtimeRoots": [
+			"packages/@internal/shared/node_modules",
+			"packages/@internal/server/node_modules"
+		]
+	}
+}

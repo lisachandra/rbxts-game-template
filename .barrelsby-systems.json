@@ -1,0 +1,12 @@
+{
+	"directory": ["src/server/systems", "src/client/systems"],
+	"exclude": [
+		".*/tests/*.",
+		".*/(barrel|spec)\\.(ts|tsx)$",
+		".*\\.spec\\.(ts|tsx)$",
+		".*/.*\\.d\\.(ts|tsx)$"
+	],
+	"name": "barrel.ts",
+	"structure": "filesystem",
+	"delete": true
+}

@@ -1,0 +1,88 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_as:
+        description: Optional version bump override
+        required: false
+        default: auto
+        type: choice
+        options:
+          - auto
+          - patch
+          - minor
+          - major
+
+permissions:
+  actions: read
+  contents: write
+  packages: read
+
+env:
+  CI: true
+  HUSKY: 0
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment:
+      name: ci
+    steps:
+      - name: Bootstrap local actions
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            .github/actions
+          sparse-checkout-cone-mode: false
+
+      - id: checkout
+        name: Checkout
+        uses: ./.github/actions/checkout
+
+      - name: Fetch tags
+        run: git fetch --tags --force
+
+      - name: Setup
+        uses: ./.github/actions/setup
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Validate build
+        run: pnpm build
+
+      - name: Validate tests
+        run: pnpm test
+
+      - name: Create release commit and tag
+        run: |
+          if [ "${{ inputs.release_as }}" = "auto" ] || [ -z "${{ inputs.release_as }}" ]; then
+            pnpm release
+          else
+            pnpm release -- --release-as "${{ inputs.release_as }}"
+          fi
+
+      - id: release_meta
+        name: Resolve release metadata
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          TAG="v$VERSION"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+      - name: Push release commit and tag
+        run: git push --follow-tags origin HEAD:main
+
+      - id: changelog
+        name: Get changelog notes
+        uses: yashanand1910/standard-release-notes@v1.2.1
+        with:
+          changelog_path: .github/CHANGELOG.md
+          version: ${{ steps.release_meta.outputs.tag }}
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body: ${{ steps.changelog.outputs.release_notes }}
+          name: ${{ steps.release_meta.outputs.tag }}
+          tag_name: ${{ steps.release_meta.outputs.tag }}
