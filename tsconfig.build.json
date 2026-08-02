@@ -7,8 +7,7 @@
 		"module": "preserve",
 		"moduleResolution": "bundler",
 		"paths": {
-			"*": ["./src/*"],
-			"@rbxts/tether/emitters/*": ["${configDir}/node_modules/@rbxts/tether/out/emitters/*"]
+			"*": ["./src/*"]
 		},
 		"typeRoots": ["${configDir}/node_modules/@rbxts", "${configDir}/node_modules/@lisachandra"],
 		"types": [

@@ -169,7 +169,7 @@ catalogs:
       specifier: 0.0.11
       version: 0.0.11
     '@rbxts/tether':
-      specifier: github:lisachandra/tether#cfef844decfca6acf4b71e9cd80e5b7dde1d527a
+      specifier: github:lisachandra/tether#694d5b4734e36f71efe46bda92f7f493b459d9f6
       version: 1.4.22
     '@rbxts/trash':
       specifier: ^1.0.8
@@ -359,10 +359,10 @@ importers:
         version: 0.1.1(60456dc5796b959a646ec092db50933c)
       '@lisachandra/matter':
         specifier: 'catalog:'
-        version: 0.1.1(b9d199d292c12cf4097355cb53d017de)
+        version: 0.1.1(ed32657b456de151003b2dcc9d6c5679)
       '@lisachandra/platform':
         specifier: 'catalog:'
-        version: 0.1.1(fd0fa8159d615cc41465403a87b7b438)
+        version: 0.1.1(04c4d4a78349a15cd5a2c27c44e33c45)
       '@rbxts/centurion':
         specifier: 'catalog:'
         version: 1.0.1(patch_hash=d921b22690ae9df45456a8e5e927e1aace6d344631c9639f0f36b12489e67332)
@@ -389,7 +389,7 @@ importers:
         version: 1.6.0
       '@rbxts/tether':
         specifier: 'catalog:'
-        version: https://codeload.github.com/lisachandra/tether/tar.gz/cfef844decfca6acf4b71e9cd80e5b7dde1d527a
+        version: https://codeload.github.com/lisachandra/tether/tar.gz/694d5b4734e36f71efe46bda92f7f493b459d9f6
 
   packages/@internal/shared:
     dependencies:
@@ -404,10 +404,10 @@ importers:
         version: 0.1.1(60456dc5796b959a646ec092db50933c)
       '@lisachandra/matter':
         specifier: 'catalog:'
-        version: 0.1.1(4f5b85274689692e0816555a7ec2913a)
+        version: 0.1.1(c6c3d0f11f56076e07e484839229e855)
       '@lisachandra/platform':
         specifier: 'catalog:'
-        version: 0.1.1(15799f9d2dcf9a9b99742cf8177b9ab7)
+        version: 0.1.1(34cbc0f3e2a91463f4b34c78974872ee)
       '@lisachandra/react-router':
         specifier: 'catalog:'
         version: 1.0.1(@lisachandra/types@0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0))(@rbxts/lemon-signal@1.2.0)(@rbxts/react@17.3.7-ts.2)(@rbxts/services@1.6.0)
@@ -419,7 +419,7 @@ importers:
         version: 0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0)
       '@lisachandra/ui':
         specifier: 'catalog:'
-        version: 0.1.1(e4674c837a3de37e29a3e48587146800)
+        version: 0.1.1(00c75741bda9f60973f4f0c6de23ad78)
       '@rbxts/centurion':
         specifier: 'catalog:'
         version: 1.0.1(patch_hash=d921b22690ae9df45456a8e5e927e1aace6d344631c9639f0f36b12489e67332)
@@ -500,7 +500,7 @@ importers:
         version: 0.0.11(patch_hash=7b96b6bae29d8b99cfb3e61af05324b11901930a6ca4159d411a19c54d4463a8)
       '@rbxts/tether':
         specifier: 'catalog:'
-        version: https://codeload.github.com/lisachandra/tether/tar.gz/cfef844decfca6acf4b71e9cd80e5b7dde1d527a
+        version: https://codeload.github.com/lisachandra/tether/tar.gz/694d5b4734e36f71efe46bda92f7f493b459d9f6
       '@rbxts/trash':
         specifier: 'catalog:'
         version: 1.0.10
@@ -2657,8 +2657,8 @@ packages:
   '@rbxts/t@3.2.1':
     resolution: {integrity: sha512-/fnf2QSx+TI3HSJ6QW2ikvGQk0mlx/63UXo60pLAKGqbxXiAuTJh88bpKpHw6aCzfFLJAwrVIcgCUOokLMPcag==}
 
-  '@rbxts/tether@https://codeload.github.com/lisachandra/tether/tar.gz/cfef844decfca6acf4b71e9cd80e5b7dde1d527a':
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/lisachandra/tether/tar.gz/cfef844decfca6acf4b71e9cd80e5b7dde1d527a}
+  '@rbxts/tether@https://codeload.github.com/lisachandra/tether/tar.gz/694d5b4734e36f71efe46bda92f7f493b459d9f6':
+    resolution: {gitHosted: true, integrity: sha512-PMpWToUb1IKIWR2+kmaqTwEEGZTtpTj0bhJ3yJZJQb2nNnbyUDw9UhjCRiM4GcuDjpGqf4KOCrdiJ4EzSA3CJA==, tarball: https://codeload.github.com/lisachandra/tether/tar.gz/694d5b4734e36f71efe46bda92f7f493b459d9f6}
     version: 1.4.22
 
   '@rbxts/trash@1.0.10':
@@ -7020,7 +7020,7 @@ snapshots:
       '@rbxts/validate-tree': 2.0.2
       type-fest: 5.8.0
 
-  '@lisachandra/matter@0.1.1(4f5b85274689692e0816555a7ec2913a)':
+  '@lisachandra/matter@0.1.1(c6c3d0f11f56076e07e484839229e855)':
     dependencies:
       '@flamework/core': 1.3.2
       '@lisachandra/constant': 0.3.0(@rbxts/iris@2.3.1-ts.1)(@rbxts/luau-polyfill@1.1.3(patch_hash=2f16809e495dcbc78a9f4e0d38ccec26eeb4671cf342a8aee7c995b358d121d1))(@rbxts/services@1.6.0)
@@ -7041,10 +7041,10 @@ snapshots:
       '@rbxts/services': 1.6.0
       '@rbxts/sift': 0.0.11(patch_hash=7b96b6bae29d8b99cfb3e61af05324b11901930a6ca4159d411a19c54d4463a8)
       '@rbxts/t': 3.2.1
-      '@rbxts/tether': https://codeload.github.com/lisachandra/tether/tar.gz/cfef844decfca6acf4b71e9cd80e5b7dde1d527a
+      '@rbxts/tether': https://codeload.github.com/lisachandra/tether/tar.gz/694d5b4734e36f71efe46bda92f7f493b459d9f6
       type-fest: 5.8.0
 
-  '@lisachandra/matter@0.1.1(b9d199d292c12cf4097355cb53d017de)':
+  '@lisachandra/matter@0.1.1(ed32657b456de151003b2dcc9d6c5679)':
     dependencies:
       '@flamework/core': 1.3.2
       '@lisachandra/constant': 0.3.0(@rbxts/iris@2.3.1-ts.1)(@rbxts/luau-polyfill@1.1.3(patch_hash=2f16809e495dcbc78a9f4e0d38ccec26eeb4671cf342a8aee7c995b358d121d1))(@rbxts/services@1.6.0)
@@ -7065,34 +7065,14 @@ snapshots:
       '@rbxts/services': 1.6.0
       '@rbxts/sift': 0.0.11(patch_hash=7b96b6bae29d8b99cfb3e61af05324b11901930a6ca4159d411a19c54d4463a8)
       '@rbxts/t': 3.2.1
-      '@rbxts/tether': https://codeload.github.com/lisachandra/tether/tar.gz/cfef844decfca6acf4b71e9cd80e5b7dde1d527a
+      '@rbxts/tether': https://codeload.github.com/lisachandra/tether/tar.gz/694d5b4734e36f71efe46bda92f7f493b459d9f6
       type-fest: 5.8.0
 
-  '@lisachandra/platform@0.1.1(15799f9d2dcf9a9b99742cf8177b9ab7)':
+  '@lisachandra/platform@0.1.1(04c4d4a78349a15cd5a2c27c44e33c45)':
     dependencies:
       '@flamework/core': 1.3.2
       '@lisachandra/core': 0.1.1(60456dc5796b959a646ec092db50933c)
-      '@lisachandra/matter': 0.1.1(4f5b85274689692e0816555a7ec2913a)
-      '@lisachandra/types': 0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0)
-      '@rbxts/centurion': 1.0.1(patch_hash=d921b22690ae9df45456a8e5e927e1aace6d344631c9639f0f36b12489e67332)
-      '@rbxts/lapis': 0.3.8(@rbxts/t@3.2.1)
-      '@rbxts/lapis-mockdatastore': 0.3.7
-      '@rbxts/log': 0.6.3(patch_hash=bf40352586e3f489dc7073cbc83f556136cb6ce4a630d1578f759750e63a4051)
-      '@rbxts/matter': https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c)
-      '@rbxts/object-utils': 1.0.4
-      '@rbxts/rbxts-hashlib': 1.0.2
-      '@rbxts/regexp': 0.2.1-ts.4
-      '@rbxts/serio': 1.2.5(patch_hash=a99304447f32fc933643ee3532fba7e8adaa854cbc267747c60832ceb6fd24e5)
-      '@rbxts/services': 1.6.0
-      '@rbxts/sift': 0.0.11(patch_hash=7b96b6bae29d8b99cfb3e61af05324b11901930a6ca4159d411a19c54d4463a8)
-      '@rbxts/t': 3.2.1
-      type-fest: 5.8.0
-
-  '@lisachandra/platform@0.1.1(fd0fa8159d615cc41465403a87b7b438)':
-    dependencies:
-      '@flamework/core': 1.3.2
-      '@lisachandra/core': 0.1.1(60456dc5796b959a646ec092db50933c)
-      '@lisachandra/matter': 0.1.1(b9d199d292c12cf4097355cb53d017de)
+      '@lisachandra/matter': 0.1.1(ed32657b456de151003b2dcc9d6c5679)
       '@lisachandra/types': 0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0)
       '@rbxts/centurion': 1.0.1(patch_hash=d921b22690ae9df45456a8e5e927e1aace6d344631c9639f0f36b12489e67332)
       '@rbxts/lapis': 0.3.8(@rbxts/t@3.2.1)
@@ -7103,6 +7083,26 @@ snapshots:
       '@rbxts/rbxts-hashlib': 1.0.2
       '@rbxts/regexp': 0.2.1-ts.4
       '@rbxts/serio': 1.2.7(patch_hash=a99304447f32fc933643ee3532fba7e8adaa854cbc267747c60832ceb6fd24e5)
+      '@rbxts/services': 1.6.0
+      '@rbxts/sift': 0.0.11(patch_hash=7b96b6bae29d8b99cfb3e61af05324b11901930a6ca4159d411a19c54d4463a8)
+      '@rbxts/t': 3.2.1
+      type-fest: 5.8.0
+
+  '@lisachandra/platform@0.1.1(34cbc0f3e2a91463f4b34c78974872ee)':
+    dependencies:
+      '@flamework/core': 1.3.2
+      '@lisachandra/core': 0.1.1(60456dc5796b959a646ec092db50933c)
+      '@lisachandra/matter': 0.1.1(c6c3d0f11f56076e07e484839229e855)
+      '@lisachandra/types': 0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0)
+      '@rbxts/centurion': 1.0.1(patch_hash=d921b22690ae9df45456a8e5e927e1aace6d344631c9639f0f36b12489e67332)
+      '@rbxts/lapis': 0.3.8(@rbxts/t@3.2.1)
+      '@rbxts/lapis-mockdatastore': 0.3.7
+      '@rbxts/log': 0.6.3(patch_hash=bf40352586e3f489dc7073cbc83f556136cb6ce4a630d1578f759750e63a4051)
+      '@rbxts/matter': https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c)
+      '@rbxts/object-utils': 1.0.4
+      '@rbxts/rbxts-hashlib': 1.0.2
+      '@rbxts/regexp': 0.2.1-ts.4
+      '@rbxts/serio': 1.2.5(patch_hash=a99304447f32fc933643ee3532fba7e8adaa854cbc267747c60832ceb6fd24e5)
       '@rbxts/services': 1.6.0
       '@rbxts/sift': 0.0.11(patch_hash=7b96b6bae29d8b99cfb3e61af05324b11901930a6ca4159d411a19c54d4463a8)
       '@rbxts/t': 3.2.1
@@ -7158,11 +7158,11 @@ snapshots:
       '@rbxts/types': 1.0.941
       type-fest: 5.8.0
 
-  '@lisachandra/ui@0.1.1(e4674c837a3de37e29a3e48587146800)':
+  '@lisachandra/ui@0.1.1(00c75741bda9f60973f4f0c6de23ad78)':
     dependencies:
       '@lisachandra/constant': 0.3.0(@rbxts/iris@2.3.1-ts.1)(@rbxts/luau-polyfill@1.1.3(patch_hash=2f16809e495dcbc78a9f4e0d38ccec26eeb4671cf342a8aee7c995b358d121d1))(@rbxts/services@1.6.0)
       '@lisachandra/core': 0.1.1(60456dc5796b959a646ec092db50933c)
-      '@lisachandra/matter': 0.1.1(4f5b85274689692e0816555a7ec2913a)
+      '@lisachandra/matter': 0.1.1(c6c3d0f11f56076e07e484839229e855)
       '@lisachandra/react-template': 1.0.0(@lisachandra/types@0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0))(@rbxts/log@0.6.3(patch_hash=bf40352586e3f489dc7073cbc83f556136cb6ce4a630d1578f759750e63a4051))(@rbxts/react@17.3.7-ts.2)(@rbxts/services@1.6.0)
       '@lisachandra/types': 0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0)
       '@rbxts/pretty-react-hooks': 0.6.4(@rbxts/react-roblox@17.3.7-ts.2(@rbxts/react@17.3.7-ts.2))(@rbxts/react@17.3.7-ts.2)
@@ -8204,7 +8204,7 @@ snapshots:
 
   '@rbxts/t@3.2.1': {}
 
-  '@rbxts/tether@https://codeload.github.com/lisachandra/tether/tar.gz/cfef844decfca6acf4b71e9cd80e5b7dde1d527a':
+  '@rbxts/tether@https://codeload.github.com/lisachandra/tether/tar.gz/694d5b4734e36f71efe46bda92f7f493b459d9f6':
     dependencies:
       '@flamework/core': 1.3.2
       '@rbxts/destroyable': 1.0.11

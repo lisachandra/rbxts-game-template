@@ -112,7 +112,7 @@ catalog:
     "@rbxts/serio": 1.2.5
     "@rbxts/services": latest
     "@rbxts/sift": 0.0.11
-    "@rbxts/tether": github:lisachandra/tether#cfef844decfca6acf4b71e9cd80e5b7dde1d527a
+    "@rbxts/tether": github:lisachandra/tether#694d5b4734e36f71efe46bda92f7f493b459d9f6
     "@rbxts/trash": ^1.0.8
     "@rbxts/types": latest
     "@types/node": 24.10.4
