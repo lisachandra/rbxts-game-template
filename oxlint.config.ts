@@ -9,7 +9,10 @@ import {
 	GLOB_TSX,
 	GLOB_YAML,
 } from "@isentinel/eslint-config";
+import type { Rules } from "@isentinel/eslint-config";
 import { isentinel } from "@isentinel/eslint-config/oxlint";
+
+import type { Linter } from "eslint";
 
 // Mutable DummyRule tuple: `as const` is rejected by type-check (TS2322).
 const noRestrictedSyntaxRule: ["error", ...Array<{ message: string; selector: string }>] = [
@@ -40,6 +43,66 @@ const noRestrictedSyntaxRule: ["error", ...Array<{ message: string; selector: st
 			"BinaryExpression:matches([operator='!=='], [operator='===']):has(Identifier[name='undefined']):has(:matches(CallExpression[callee.property.name='find'], ElementAccessExpression > CallExpression[callee.property.name='find']))",
 	},
 ];
+
+type ExtractRuleEntry<T> =
+	T extends Linter.RuleEntry<infer _U> ? Extract<T, [unknown, ...Array<unknown>]>[1] : never;
+type TSNamingConvention = ExtractRuleEntry<Rules["ts/naming-convention"]>;
+type SelectorNamingConventionMap = {
+	[K in Extract<Extract<TSNamingConvention, { selector: string }>["selector"], string>]: Array<
+		Omit<Extract<TSNamingConvention, { selector: K }>, "selector">
+	>;
+};
+
+const defaultNamingConvention = {
+	default: [
+		{ format: ["camelCase", "PascalCase"], modifiers: ["exported"] },
+		{ format: ["camelCase"], leadingUnderscore: "allowSingleOrDouble" },
+	],
+	enumMember: [{ format: ["PascalCase"] }],
+	function: [{ format: ["camelCase", "PascalCase"] }],
+	import: [{ format: ["camelCase", "PascalCase"] }],
+	interface: [
+		{
+			custom: { match: false, regex: "^I[A-Z]" },
+			format: ["PascalCase"],
+		},
+	],
+	memberLike: [{ format: null }],
+	parameterProperty: [{ format: ["camelCase", "PascalCase"] }],
+	property: [{ format: null }],
+	typeLike: [{ format: ["PascalCase", "camelCase", "UPPER_CASE"] }],
+	typeParameter: [{ format: ["PascalCase", "camelCase", "UPPER_CASE"] }],
+	typeProperty: [{ format: null }],
+	variableLike: [
+		{
+			format: ["PascalCase", "camelCase", "UPPER_CASE"],
+			leadingUnderscore: "allowSingleOrDouble",
+		},
+	],
+} satisfies Partial<SelectorNamingConventionMap>;
+
+function transformNamingConventionMap(
+	namingConventionMap: Partial<SelectorNamingConventionMap>,
+): Rules["ts/naming-convention"] {
+	const transformedRules: Array<TSNamingConvention> = [];
+	for (const [selector, rules] of Object.entries(namingConventionMap) as Array<
+		[keyof SelectorNamingConventionMap, undefined | Array<Record<string, unknown>>]
+	>) {
+		if (rules === undefined) {
+			continue;
+		}
+
+		for (const rule of rules) {
+			transformedRules.push({ selector: [selector], ...rule } as TSNamingConvention);
+		}
+	}
+
+	return ["warn", ...transformedRules] as unknown as Rules["ts/naming-convention"];
+}
+
+// Kept referenced so the FIXME below can be re-enabled without restoring dead code.
+void defaultNamingConvention;
+void transformNamingConventionMap;
 
 export default isentinel(
 	{

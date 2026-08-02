@@ -69,16 +69,31 @@ catalog:
     "@lisachandra/constant": 0.3.0
     "@lisachandra/core": 0.1.0
     "@lisachandra/matter": 0.1.0
+    "@lisachandra/platform": 0.1.0
     "@lisachandra/test": 0.1.0
     "@lisachandra/types": 0.1.0
+    "@rbxts/centurion": 1.0.1
     "@rbxts/compiler-types": latest
+    "@rbxts/crate": 1.0.3-rc.1
+    "@rbxts/destroyable": 1.0.11
+    "@rbxts/dom-testing-library": 8.16.0-ts.2
+    "@rbxts/janitor": 1.18.3-ts.0
     "@rbxts/jest": 3.16.0-ts.1
     "@rbxts/jest-globals": 3.16.0-ts.1
+    "@rbxts/lapis": 0.3.8
+    "@rbxts/log": 0.6.3
     "@rbxts/luau-polyfill": 1.1.3
     "@rbxts/matter": github:matter-ecs/matter-types
+    "@rbxts/react": 17.3.7-ts.2
+    "@rbxts/react-globals": 17.3.7-ts.2
+    "@rbxts/react-roblox": 17.3.7-ts.2
+    "@rbxts/react-testing-library": 12.1.5-rc.6
+    "@rbxts/repr": ^1.0.3
     "@rbxts/serio": 1.2.5
     "@rbxts/services": latest
-    "@rbxts/tether": 1.4.21
+    "@rbxts/sift": 0.0.11
+    "@rbxts/tether": github:lisachandra/tether#cfef844decfca6acf4b71e9cd80e5b7dde1d527a
+    "@rbxts/trash": ^1.0.8
     "@rbxts/types": latest
     "@types/node": 24.10.4
     "@typescript-eslint/eslint-plugin": 8.65.0

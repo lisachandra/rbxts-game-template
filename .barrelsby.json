@@ -1,0 +1,7 @@
+{
+	"directory": ["src/server/centurion/commands"],
+	"exclude": [".*/tests/*.", ".*/(index|barrel|spec)\\.(ts|tsx)$", ".*/.*\\.d\\.(ts|tsx)$"],
+	"name": "barrel.ts",
+	"structure": "filesystem",
+	"delete": true
+}

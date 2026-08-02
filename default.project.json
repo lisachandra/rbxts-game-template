@@ -11,6 +11,27 @@
 		},
 		"ReplicatedStorage": {
 			"$className": "ReplicatedStorage",
+			"Animations": {
+				"$className": "Folder",
+				"Tools": {
+					"$className": "Folder"
+				}
+			},
+			"Models": {
+				"$className": "Folder",
+				"Items": {
+					"$className": "Folder"
+				}
+			},
+			"Tools": {
+				"$className": "Folder"
+			},
+			"UI": {
+				"$className": "Folder"
+			},
+			"VFX": {
+				"$className": "Folder"
+			},
 			"TS": {
 				"$className": "Folder",
 				"rbxts_include": {
@@ -81,7 +102,7 @@
 			"StarterPlayerScripts": {
 				"$className": "StarterPlayerScripts",
 				"PlayerModule": {
-					"$path": "out/client/player.client.luau"
+					"$path": "out/client/player.luau"
 				}
 			}
 		},
@@ -91,13 +112,25 @@
 				"SignalBehavior": "Deferred",
 				"StreamingEnabled": true
 			},
+			"Caches": {
+				"$className": "Folder",
+				"Sound": {
+					"$className": "Folder"
+				}
+			},
 			"Characters": {
+				"$className": "Folder"
+			},
+			"Items": {
 				"$className": "Folder"
 			},
 			"Maps": {
 				"$className": "Folder"
 			},
 			"Models": {
+				"$className": "Folder"
+			},
+			"Nodes": {
 				"$className": "Folder"
 			}
 		}

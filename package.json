@@ -4,11 +4,11 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"barrels": "barrelsby --delete --config .barrelsby-systems.json",
+		"barrels": "barrelsby --delete --config .barrelsby.json && barrelsby --delete --config .barrelsby-systems.json",
 		"bedrock:build": "sh scripts/bash/setup-place.sh default.project.json build/production.rbxl",
-		"bedrock:deploy": "mise run bedrock -- deploy --env production",
-		"bedrock:diff": "mise run bedrock -- diff --env production",
-		"bedrock:publish": "mise run bedrock -- publish --env production",
+		"bedrock:deploy": "bedrock -- deploy --env production",
+		"bedrock:diff": "bedrock -- diff --env production",
+		"bedrock:publish": "bedrock -- publish --env production",
 		"build": "pnpm -r --if-present run \"/^build.*/\" && pnpm build:source",
 		"build:source": "pnpm clean:source && rbxtsc --type 'game' --includePath packages/@internal/shared/node_modules/@lisachandra/types/out/include --noInclude --verbose --allowCommentDirectives",
 		"clean": "pnpm -r --include-workspace-root --parallel run \"/^clean:.*/\"",
@@ -37,6 +37,7 @@
 		"submodules": "bash ./scripts/bash/submodule-setup.sh",
 		"typecheck": "tsgo --build tsconfig.check.json --emitDeclarationOnly",
 		"test": "pnpm clean:test && pnpm bedrock:build && COLUMNS=${COLUMNS:-$(tput cols 2>/dev/null || echo 80)} FORCE_COLOR=1 jest-roblox",
+		"test:local": "sh scripts/bash/test.sh default.project.json src/test/spec.server.luau",
 		"test:slow": "INCLUDE_SLOW=1 pnpm test"
 	},
 	"dependencies": {

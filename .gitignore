@@ -5,8 +5,6 @@
 
 # AI documentation
 .diracrules
-.agents/skills/
-.agents/hooks/run-project-hook.cmd
 
 ### Roblox-TS ###
 

@@ -5,6 +5,11 @@ import { defineConfig } from "@bedrock-rbx/core/config";
  * environment overlay because staging and production target different universes/places.
  */
 export default defineConfig({
+	codegen: {
+		enabled: true,
+		output: "src/shared/assets",
+		typeDeclarations: true,
+	},
 	environments: {
 		production: {
 			label: "production",
@@ -14,7 +19,16 @@ export default defineConfig({
 					placeId: "0", // TODO: replace with your place ID
 				},
 			},
-			products: {},
+			products: {
+				/*
+				 * TODO: replace with your developer product IDs and prices.
+				 * example: {
+				 * 	description: "Stocks the player up with premium currency.",
+				 * 	name: "Gem Pack",
+				 * 	price: 1500,
+				 * },
+				 */
+			},
 			universe: {
 				consoleEnabled: true,
 				desktopEnabled: true,
