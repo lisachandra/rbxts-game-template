@@ -1,4 +1,4 @@
-/* oxlint-disable typescript-js/naming-convention, unused-imports/no-unused-vars -- Oxlint config file */
+/* oxlint-disable typescript-js/naming-convention, typescript/no-unsafe-type-assertion, unused-imports/no-unused-vars -- Oxlint config file */
 import {
 	GLOB_EXCLUDE,
 	GLOB_MARKDOWN,
@@ -300,6 +300,9 @@ export default isentinel(
 			"eslint/no-empty-function": "off",
 			"eslint/no-lone-blocks": "off",
 			"eslint/prefer-const": "off",
+			"flawless/arrow-return-style": "off",
+			"flawless/max-lines-per-function": "off",
+			"flawless/prefer-parameter-destructuring": "off",
 			"oxc/no-barrel-file": "off",
 			"react-jsx/no-useless-fragment": "off",
 			"roblox/no-any": "off",
@@ -358,6 +361,17 @@ export default isentinel(
 			"@cspell/spellchecker": "off",
 		},
 	},
+	// Node build scripts overrides
+	{
+		files: ["scripts/**/*"],
+		name: "project/node-scripts",
+		rules: {
+			"flawless/arrow-return-style": "off",
+			"flawless/max-lines-per-function": "off",
+			"import/no-nodejs-modules": "off",
+		},
+	},
+
 	// Markdown/YAML overrides — disable rules that don't work on these file types
 	{
 		files: [GLOB_MARKDOWN, GLOB_YAML],

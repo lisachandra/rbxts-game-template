@@ -30,7 +30,8 @@ export function loadApp(module: ModuleScript): void {
 		return;
 	}
 
-	const debugName = `${module.Parent}.${module.Name}`;
+	const debugName = `${module.Parent?.GetFullName() ?? "nil"}.${module.Name}`;
+	// oxlint-disable-next-line typescript/no-unsafe-type-assertion -- Dynamic module boundary: hot-reloaded modules cannot be statically typed.
 	let [success, app] = pcall(require, module) as LuaTuple<[true, App]>;
 
 	// oxlint-disable-next-line typescript/no-unnecessary-condition -- pcall result is retained for runtime error handling.
@@ -44,6 +45,7 @@ export function loadApp(module: ModuleScript): void {
 		const newApp = client.ui.app.Clone();
 		newApp.Parent = client.ui;
 
+		// oxlint-disable-next-line typescript/no-unsafe-type-assertion -- Dynamic module boundary: the cloned app module cannot be statically typed.
 		app = require(newApp) as App;
 	}
 

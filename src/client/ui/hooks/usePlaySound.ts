@@ -19,11 +19,9 @@ export function usePlaySound(category: string, name: string): () => void {
 			return;
 		}
 
-		const id = soundInstance.GetAttribute("id") as number | undefined;
-		if (id === undefined) {
-			return;
+		const id = soundInstance.GetAttribute("id");
+		if (typeIs(id, "number")) {
+			store.world.spawn(Components.Sound({ id, local: true }));
 		}
-
-		store.world.spawn(Components.Sound({ id, local: true }));
 	}, [category, name]);
 }
