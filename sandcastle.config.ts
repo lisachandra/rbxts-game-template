@@ -1,6 +1,6 @@
-import type { SandcastleConfig } from "@lisachandra/sandcastle";
+import type { SandcastleUserConfig } from "@lisachandra/sandcastle";
 
-const config: SandcastleConfig = {
+const config: SandcastleUserConfig = {
 	dir: ".sandcastle",
 	baseBranch: "main",
 	setupCommands: ["pnpm setup"],
