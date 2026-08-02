@@ -141,7 +141,6 @@ export default isentinel(
 			"eslint/max-lines": "off",
 			"eslint/max-lines-per-function": "off",
 			"eslint/no-console": "off",
-			"id-length": "off",
 			"jsdoc/convert-to-jsdoc-comments": "off",
 			"no-inline-comments": "off",
 			"perfectionist/sort-array-includes": [
