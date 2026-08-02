@@ -14,8 +14,3 @@ gh = "2.96.0"
 jq = "1.8.1"
 node = { version = "lts" }
 pnpm = "11.10.0"
-
-[tasks.bedrock]
-description = "Run the Bedrock CLI installed from npm"
-run = "pnpm exec bedrock"
-raw = true

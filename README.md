@@ -1,4 +1,10 @@
-# rbxts-game-template
+<div align="center">
+  <h1>rbxts-game-template</h1>
+
+  <p>
+    <strong>A general-purpose Roblox game template built with roblox-ts.</strong>
+  </p>
+</div>
 
 A general-purpose Roblox game template built with roblox-ts, pnpm, the
 `@lisachandra` runtime stack, and a strict build/lint/typecheck/test pipeline.
@@ -32,19 +38,15 @@ A general-purpose Roblox game template built with roblox-ts, pnpm, the
 ## Getting Started
 
 Requirements: [mise](https://mise.jdx.dev) (pinned tools), pnpm, and Git.
-`@lisachandra` packages are published on GitHub Packages, so your npm/pnpm
-auth must include a `read:packages` token for the `@lisachandra` scope
-(see `.npmrc`).
 
 ```bash
 pnpm setup
 ```
 
-Then serve the template in Roblox Studio:
+Then serve the template:
 
 ```bash
-pnpm dev:rbx-tree
-pnpm dev:source
+pnpm dev
 ```
 
 ## Commands

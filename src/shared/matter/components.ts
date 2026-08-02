@@ -1,23 +1,23 @@
 import { registry } from "@lisachandra/matter";
+import { Components } from "@lisachandra/matter/components";
 import { component } from "@rbxts/matter";
 import { equalsDeep } from "@rbxts/sift/Dictionary";
 
-export interface PlayerSessionData {
-	playerId: number;
-	position: Vector3;
+// oxlint-disable-next-line eslint-js/no-restricted-syntax -- ambient module declaration
+declare module "@lisachandra/matter/components" {
+	interface Components {
+		Session: {
+			playerId: number;
+			spawnIndex: number;
+		};
+	}
 }
 
-export const PlayerSession = component<PlayerSessionData>("PlayerSession");
+Components.Session = component<Components["Session"]>("Session");
 
-registry.register<PlayerSessionData, PlayerSessionData>({
-	component: PlayerSession,
+registry.register<Components["Session"], Components["Session"]>({
+	component: Components.Session,
 	deserializer: (data) => data,
 	mode: "all",
-	serializer: (record) => {
-		if (equalsDeep(record.old ?? {}, record.new ?? {})) {
-			return undefined;
-		}
-
-		return record.new;
-	},
+	serializer: (record) => (!equalsDeep(record.old ?? {}, record.new ?? {}) ? record.new : false),
 });

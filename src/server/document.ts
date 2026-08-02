@@ -1,6 +1,6 @@
 import type { CollectionData } from "@lisachandra/core/store";
 import { configureRuntimeAdapters } from "@lisachandra/matter";
-import { createDataStoreValidator } from "@lisachandra/platform/document";
+import { createDataStoreValidator } from "@lisachandra/platform/document/validate";
 import { createCollection } from "@rbxts/lapis";
 
 export interface PlayerProfileData {
@@ -16,10 +16,7 @@ declare module "@lisachandra/core/store" {
 }
 
 const playerDataCollection = createCollection("PlayerData", {
-	defaultData: {
-		hotbar: [],
-		inventory: [],
-	},
+	defaultData: {},
 	validate: createDataStoreValidator<CollectionData>(),
 });
 

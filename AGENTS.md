@@ -4,6 +4,15 @@
 - `pnpm submodules` builds local `@rbxts/flux` and `@isentinel/jest-roblox`
   after fresh checkout.
 
+## References
+
+- Code standards: `docs/agents/coding-standards.md`
+- Issue tracker: `docs/agents/issue-tracker.md`
+- Release/milestone policy: `docs/agents/release.md`
+- Triage labels: `docs/agents/triage-labels.md`
+- Domain docs: `CONTEXT.md`, `docs/adr/`, `docs/agents/domain.md`
+- Studio/runtime testing: `docs/agents/testing-apis.md`
+
 ## Package Manager
 
 Use **pnpm**.
@@ -35,15 +44,26 @@ AI commits MUST include:
 Co-Authored-By: (the agent's name and attribution byline)
 ```
 
+## Agent Workflow
+
+- Check matching GitHub issue/sub-issue when useful. Mention in plan and
+  summary.
+- Before changeset: check related changesets. Avoid duplicate.
+- One commit may have many changesets when user-facing behaviors differ.
+- After work: create/update issues for material follow-up. Do not bury follow-up
+  in chat.
+
 ## Verification
 
-- `pnpm barrels`, `pnpm lint:fix`, `pnpm typecheck`, `pnpm build`, `pnpm test`
+- `pnpm barrels`, `pnpm lint:fix`, `pnpm typecheck`, `pnpm build`,
+  `pnpm test (with -- --testPathPattern ...)` OR `pnpm test:local`
 - Report exact tests/tools run and blockers.
 
 ## Project Conventions
 
-- Server/client bootstrap stays an integration boundary unless the task changes it.
+- Server/client bootstrap stays integration boundary unless task changes it.
 - System discovery is barrel-based. Run `pnpm barrels` when discovery changes.
+- System filenames: noun-verb camelCase.
 - `./submodules/flux` backs local `@rbxts/flux`.
-- `./submodules/jest-roblox-cli` backs the Drillbit/Jest runner plugin.
-- Use `./creator-docs` for Roblox API docs when present.
+- `./submodules/jest-roblox-cli` backs Drillbit/Jest runner plugin.
+- Use `./creator-docs` for Roblox API.

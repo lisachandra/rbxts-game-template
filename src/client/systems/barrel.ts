@@ -3,4 +3,6 @@
  */
 
 import * as cameraSystemts from "./cameraSystem";
+import * as inputReporterts from "./inputReporter";
 export {cameraSystemts as cameraSystem};
+export {inputReporterts as inputReporter};

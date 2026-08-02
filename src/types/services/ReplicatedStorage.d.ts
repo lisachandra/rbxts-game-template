@@ -11,6 +11,9 @@ interface ReplicatedStorage extends Instance {
 	TS: Folder & {
 		client: Folder & {
 			systems: Folder;
+			ui: Folder & {
+				app: ModuleScript;
+			};
 		};
 		shared: Folder & {
 			matter: Folder & {

@@ -1,20 +1,23 @@
+import { store } from "@lisachandra/core/store";
+import { Components } from "@lisachandra/matter";
+import { adminOrDeveloper } from "@lisachandra/platform";
 import { CenturionType, Command, type CommandContext, Register } from "@rbxts/centurion";
 
 @Register()
 export class ExampleCommand {
 	@Command({
-		description: "Replies with a friendly greeting.",
-		name: "greet",
+		description: "Replies with template server information.",
+		name: "templateStatus",
 	})
-	public greet(ctx: CommandContext): void {
-		ctx.reply("Hello from the template!");
+	public status(ctx: CommandContext): void {
+		ctx.reply("rbxts-game-template server is running.");
 	}
 
 	@Command({
 		arguments: [
 			{
 				type: CenturionType.String,
-				description: "The message to echo back",
+				description: "Message to echo back to the caller",
 				name: "message",
 			},
 		],
@@ -23,5 +26,22 @@ export class ExampleCommand {
 	})
 	public echo(ctx: CommandContext, message: string): void {
 		ctx.reply(message);
+	}
+
+	@Command({
+		description: "Prints the number of live player sessions. Developer only.",
+		name: "sessionCount",
+	})
+	public count(ctx: CommandContext): void {
+		if (!adminOrDeveloper(ctx)) {
+			return;
+		}
+
+		let sessionCount = 0;
+		for (const [_entityId, _session] of store.world.query(Components.Session)) {
+			sessionCount += 1;
+		}
+
+		ctx.reply(`${sessionCount} session(s)`);
 	}
 }

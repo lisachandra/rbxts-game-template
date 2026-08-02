@@ -75,15 +75,27 @@ catalogs:
     '@lisachandra/platform':
       specifier: 0.1.1
       version: 0.1.1
+    '@lisachandra/react-router':
+      specifier: 1.0.1
+      version: 1.0.1
+    '@lisachandra/sandcastle':
+      specifier: 0.2.0
+      version: 0.2.0
     '@lisachandra/test':
       specifier: 0.1.1
       version: 0.1.1
     '@lisachandra/types':
       specifier: 0.1.1
       version: 0.1.1
+    '@lisachandra/ui':
+      specifier: 0.1.1
+      version: 0.1.1
     '@rbxts/centurion':
       specifier: 1.0.1
       version: 1.0.1
+    '@rbxts/centurion-ui':
+      specifier: 1.0.8
+      version: 1.0.8
     '@rbxts/compiler-types':
       specifier: latest
       version: 3.0.0-types.0
@@ -96,6 +108,9 @@ catalogs:
     '@rbxts/dom-testing-library':
       specifier: 8.16.0-ts.2
       version: 8.16.0-ts.2
+    '@rbxts/iris':
+      specifier: 2.3.1-ts.1
+      version: 2.3.1-ts.1
     '@rbxts/janitor':
       specifier: 1.18.3-ts.0
       version: 1.18.3-ts.0
@@ -108,6 +123,9 @@ catalogs:
     '@rbxts/lapis':
       specifier: 0.3.8
       version: 0.3.8
+    '@rbxts/lapis-mockdatastore':
+      specifier: 0.3.7
+      version: 0.3.7
     '@rbxts/log':
       specifier: 0.6.3
       version: 0.6.3
@@ -117,7 +135,13 @@ catalogs:
     '@rbxts/matter':
       specifier: github:matter-ecs/matter-types
       version: 0.8.5
+    '@rbxts/pretty-react-hooks':
+      specifier: 0.6.4
+      version: 0.6.4
     '@rbxts/react':
+      specifier: 17.3.7-ts.2
+      version: 17.3.7-ts.2
+    '@rbxts/react-devtools-core':
       specifier: 17.3.7-ts.2
       version: 17.3.7-ts.2
     '@rbxts/react-globals':
@@ -132,6 +156,9 @@ catalogs:
     '@rbxts/repr':
       specifier: ^1.0.3
       version: 1.0.3
+    '@rbxts/rewire':
+      specifier: 0.3.0
+      version: 0.3.0
     '@rbxts/serio':
       specifier: 1.2.5
       version: 1.2.5
@@ -268,7 +295,7 @@ importers:
         specifier: 'catalog:'
         version: 1.2.0(typescript@6.0.3)
       '@lisachandra/sandcastle':
-        specifier: ^0.2.0
+        specifier: 'catalog:'
         version: 0.2.0
       '@lisachandra/types':
         specifier: 'catalog:'
@@ -381,12 +408,24 @@ importers:
       '@lisachandra/platform':
         specifier: 'catalog:'
         version: 0.1.1(15799f9d2dcf9a9b99742cf8177b9ab7)
+      '@lisachandra/react-router':
+        specifier: 'catalog:'
+        version: 1.0.1(@lisachandra/types@0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0))(@rbxts/lemon-signal@1.2.0)(@rbxts/react@17.3.7-ts.2)(@rbxts/services@1.6.0)
       '@lisachandra/test':
         specifier: 'catalog:'
         version: 0.1.1(65743aa417eb9eafebfb8a814c60871d)
       '@lisachandra/types':
         specifier: 'catalog:'
         version: 0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0)
+      '@lisachandra/ui':
+        specifier: 'catalog:'
+        version: 0.1.1(e4674c837a3de37e29a3e48587146800)
+      '@rbxts/centurion':
+        specifier: 'catalog:'
+        version: 1.0.1(patch_hash=d921b22690ae9df45456a8e5e927e1aace6d344631c9639f0f36b12489e67332)
+      '@rbxts/centurion-ui':
+        specifier: 'catalog:'
+        version: 1.0.8(@rbxts/centurion@1.0.1(patch_hash=d921b22690ae9df45456a8e5e927e1aace6d344631c9639f0f36b12489e67332))
       '@rbxts/compiler-types':
         specifier: 'catalog:'
         version: 3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def)
@@ -402,12 +441,21 @@ importers:
       '@rbxts/flux':
         specifier: file:..\..\..\submodules\flux\packages\core
         version: file:submodules/flux/packages/core
+      '@rbxts/iris':
+        specifier: 'catalog:'
+        version: 2.3.1-ts.1
       '@rbxts/jest':
         specifier: 'catalog:'
         version: 3.16.0-ts.1
       '@rbxts/jest-globals':
         specifier: 'catalog:'
         version: 3.16.0-ts.1(patch_hash=d42fa3158b6373f2ccc3e1d6b4a349da546dbc66e3412add2bc04fe7c973caf0)
+      '@rbxts/lapis':
+        specifier: 'catalog:'
+        version: 0.3.8(@rbxts/t@3.2.1)
+      '@rbxts/lapis-mockdatastore':
+        specifier: 'catalog:'
+        version: 0.3.7
       '@rbxts/log':
         specifier: 'catalog:'
         version: 0.6.3(patch_hash=bf40352586e3f489dc7073cbc83f556136cb6ce4a630d1578f759750e63a4051)
@@ -417,7 +465,13 @@ importers:
       '@rbxts/matter':
         specifier: 'catalog:'
         version: https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c)
+      '@rbxts/pretty-react-hooks':
+        specifier: 'catalog:'
+        version: 0.6.4(@rbxts/react-roblox@17.3.7-ts.2(@rbxts/react@17.3.7-ts.2))(@rbxts/react@17.3.7-ts.2)
       '@rbxts/react':
+        specifier: 'catalog:'
+        version: 17.3.7-ts.2
+      '@rbxts/react-devtools-core':
         specifier: 'catalog:'
         version: 17.3.7-ts.2
       '@rbxts/react-globals':
@@ -432,6 +486,9 @@ importers:
       '@rbxts/repr':
         specifier: 'catalog:'
         version: 1.0.3
+      '@rbxts/rewire':
+        specifier: 'catalog:'
+        version: 0.3.0
       '@rbxts/serio':
         specifier: 'catalog:'
         version: 1.2.5(patch_hash=a99304447f32fc933643ee3532fba7e8adaa854cbc267747c60832ceb6fd24e5)
@@ -1376,6 +1433,24 @@ packages:
       '@rbxts/t': '*'
       type-fest: '*'
 
+  '@lisachandra/react-router@1.0.1':
+    resolution: {integrity: sha512-LjdxVTkK52vExpXyc6EgRVJIO4kVCb73RDmPTesaOkx3mTos11mkLtbXae8vutIOottWw681BsTBHCrmOYNIqw==}
+    version: 1.0.1
+    peerDependencies:
+      '@lisachandra/types': '*'
+      '@rbxts/lemon-signal': '*'
+      '@rbxts/react': '*'
+      '@rbxts/services': '*'
+
+  '@lisachandra/react-template@1.0.0':
+    resolution: {integrity: sha512-TBV0k+cp0XehPOMBj0p3PdTx0J1fYo34IT2Pk/ZpDrLB1SJCIhU5JCPe6LVBMI5f8GQ7d+qmhuROO53LpX/eCQ==}
+    version: 1.0.0
+    peerDependencies:
+      '@lisachandra/types': '*'
+      '@rbxts/log': '*'
+      '@rbxts/react': '*'
+      '@rbxts/services': '*'
+
   '@lisachandra/sandcastle@0.2.0':
     resolution: {integrity: sha512-lO8TdyHAAudciUu7q536HBtqWHhPuyBrHYfFxs+I+rJ2fCio8FVeDpfdvTJMUHFlOfvbuuLK5RQnwLKjGHWOFg==}
     engines: {node: '>=20.12'}
@@ -1402,6 +1477,20 @@ packages:
       '@rbxts/matter': '*'
       '@rbxts/types': '*'
       type-fest: '*'
+
+  '@lisachandra/ui@0.1.1':
+    resolution: {integrity: sha512-DIH5gxIovnpRZYsyu088IzQBiBU358j9t3CfOy2+SLUuY6uOyHOM/yG1xlWXHOmY8nER89VkyHZpXocuoxyJdw==}
+    peerDependencies:
+      '@lisachandra/constant': '*'
+      '@lisachandra/core': '*'
+      '@lisachandra/matter': '*'
+      '@lisachandra/react-template': '*'
+      '@lisachandra/types': '*'
+      '@rbxts/pretty-react-hooks': '*'
+      '@rbxts/react': '*'
+      '@rbxts/react-roblox': '*'
+      '@rbxts/rewire': '*'
+      '@rbxts/services': '*'
 
   '@napi-rs/wasm-runtime@1.1.4':
     resolution: {integrity: sha512-3NQNNgA1YSlJb/kMH1ildASP9HW7/7kYnRI2szWJaofaS1hWmbGI4H+d3+22aGzXXN9IJ+n+GiFVcGipJP18ow==}
@@ -2352,6 +2441,15 @@ packages:
   '@rbxts-js/pretty-format@3.16.0-ts.1':
     resolution: {integrity: sha512-/V3PUKzJissbq3A3vZZkdFEMYbtf0cZtPCgL3g23Jhb5GauSbqLK2TylIbi597X5qxjMkhIPKBa/Ih4aV6qEXw==}
 
+  '@rbxts-js/react-debug-tools@17.3.7-ts.1':
+    resolution: {integrity: sha512-R3SHR1aQbRi5I5snCDO194XCRlNP5tVM7vyAPTZ4R275qlW0BtDHdKwaICNH7o3NICcr5GMZ5qkuwF9N3fW2Kw==}
+
+  '@rbxts-js/react-devtools-core@17.3.7-ts.1':
+    resolution: {integrity: sha512-sbYvsKa6lm1AxAQ+f4awHBe+8L+ATjJDP36GgQFa2JLh76wR0/piP3A7yeVS8p1WUnj5dJtKQm9KsObeTI+M+w==}
+
+  '@rbxts-js/react-devtools-shared@17.3.7-ts.1':
+    resolution: {integrity: sha512-IDd3ibHPfMuBmC2tuWdudgeM1dJKC782PP6x5a4w6UKjFvXpcQP5EoZVke2uVP/LUlnx/tT5sh5UycOU+o6OdA==}
+
   '@rbxts-js/react-globals@17.3.7-ts.1':
     resolution: {integrity: sha512-vwMHsc3Oy2MDAw2M212nQJ8A7nEG5O/lyXDyMGzYJp4832awhrf34YCkU4dxBE4sdMDcoWykhmuPjmzwrcS9Eg==}
 
@@ -2363,6 +2461,9 @@ packages:
 
   '@rbxts-js/react-roblox@17.3.7-ts.1':
     resolution: {integrity: sha512-xiJQXmJAho/mStcWYC7AXFqgUqW78whUMacaNeODMimQXgoVqaIfo0sEhLtLtS/N3qZRs1KR64nsNG/0n1r/NQ==}
+
+  '@rbxts-js/react-telemetry@17.3.7-ts.1':
+    resolution: {integrity: sha512-u0WsAgz0X/kmt3czS0la8r1bJcRKkw1HFvSRqV3Sj7Oz7I7ckgYC295fdPcRA5rZTYKBOQsTCJZDVbAM1pF+YA==}
 
   '@rbxts-js/react@17.3.7-ts.1':
     resolution: {integrity: sha512-nRHYoBzk9DSbOvk281jmN5EM3TlmKv2jOzLgSIGtmNMuwZKi9yEjjxdluS1wHmjSvus1YiPHhBUwrKnbu01Obg==}
@@ -2399,6 +2500,11 @@ packages:
 
   '@rbxts/beacon@2.1.1':
     resolution: {integrity: sha512-QeFMSGj+Iijp+tHcV9eyqVyeKZ/9zp7GqRJ/hecKiHmoTu4yFcyGnUQAaX7OdQKBCgLvWMJ9wK/FXMECjFA2Kg==}
+
+  '@rbxts/centurion-ui@1.0.8':
+    resolution: {integrity: sha512-E8uLASVsKphrf4cgm3TTPB5NornlyUN4JC7x2/+P9ZcJxaoYH3fSEV1sC+bY0xN9bTCkXCIGuULr7mHh9Vh0Nw==}
+    peerDependencies:
+      '@rbxts/centurion': ^1.0.1
 
   '@rbxts/centurion@1.0.1':
     resolution: {integrity: sha512-RFkIvnivn43/jYCg0ue90fXg+aRlhFUUc8OmYP0UWpIPRxTF3PTHpMKp7EZMXoZl7J7XzUngcqYcL1senBnenQ==}
@@ -2483,8 +2589,17 @@ packages:
   '@rbxts/pretty-format@3.16.0-ts.1':
     resolution: {integrity: sha512-zi68DwNLjMB8F7HaeWul4gMeqy4+W3d9PYlkVRCPZBE0+f/qR/G1PKMpzmJoT3SSHSbGpZk9El9gMKDfde4n4w==}
 
+  '@rbxts/pretty-react-hooks@0.6.4':
+    resolution: {integrity: sha512-yiuM3kOD0s2x0GFCUVfFdeSDJRX2ZycS88WOvqydaYwPIZ5rYDjzHjOzRgSpAzGcTVOFXsO64QOtD6svAdadzg==}
+    peerDependencies:
+      '@rbxts/react': '*'
+      '@rbxts/react-roblox': '*'
+
   '@rbxts/rbxts-hashlib@1.0.2':
     resolution: {integrity: sha512-AmczMFYxiVJbpWymYr1M5RemSOFagLg/TLJBY8RjK4Vg1gR0B8vI6E6+iOD5QmuFe849nBnEKHZ+uF/KSc5huA==}
+
+  '@rbxts/react-devtools-core@17.3.7-ts.2':
+    resolution: {integrity: sha512-cbBYxkdEBI3DU6c9Kgl/3bDRdyVvFf0XBt5DiZfcio9mRCSw9SHNs/oDd9OrUKdj2nLLHcFJY8ESOH4RCSvhVg==}
 
   '@rbxts/react-globals@17.3.7-ts.2':
     resolution: {integrity: sha512-VIoYi/n3KEUDUnoCoOSV5w7dG6G+Is4ffui0AN97/N0DXfCOFb2uS89ckwvslc2lzfL04pRJ4HH3rXFLmGxW0w==}
@@ -2518,6 +2633,9 @@ packages:
   '@rbxts/rewire@0.3.0':
     resolution: {integrity: sha512-wChhGZ3kEkEsMK9ZuwKpwRsC7OGVZlvxrYMR3beFgCIPXE58JKLziBLkDACmd709XCCEmsMAqv9HMCMhSTD08Q==}
 
+  '@rbxts/ripple@0.9.3':
+    resolution: {integrity: sha512-GmwjQl7a8pvGPGQYLmaAcf2RBPpneOL5P1+U8CzTHt9tBhCdk0TEJ/MQoTv9JnHD62RMBE1jogQBvuGgl9VXAg==}
+
   '@rbxts/serio@1.2.5':
     resolution: {integrity: sha512-IUNx2F3NXxDUZPTD3Q/nInSSubpwrBC35oxQ7agV374y/fl9KqaHxO5tHkJuI2GgYKjQQan+4/um0hjr5M2C7w==}
 
@@ -2526,6 +2644,9 @@ packages:
 
   '@rbxts/services@1.6.0':
     resolution: {integrity: sha512-YH02E1/tGHeMXB0Mam8qPdAZa2fjQWdylEscSL4Zn0RIaQeByYImA2qUsXM3nBdhcyKHDwltzSznDKyCGfFEWA==}
+
+  '@rbxts/set-timeout@1.1.2':
+    resolution: {integrity: sha512-P/A0IiH9wuZdSJYr4Us0MDFm61nvIFR0acfKFHLkcOsgvIgELC90Up9ugiSsaMEHRIcIcO5UjE39LuS3xTzQHw==}
 
   '@rbxts/sift@0.0.11':
     resolution: {integrity: sha512-JT1WTLWKkoBdDaokPz/hEjC64kessP/MPe0OW2rHGtkpQkgnnvOx4wQXzqQs1XMwciyKazjhJZjoV83X3dJplA==}
@@ -2548,6 +2669,9 @@ packages:
 
   '@rbxts/validate-tree@2.0.2':
     resolution: {integrity: sha512-OA0E9ZjEeOpPa3XeV5/oC51aro2QFcL5dItufbagYZW8TOsX8C+FDXLx+A/ulMwcF42WcFNcQybxzcWSS/QSrA==}
+
+  '@rbxts/vide@0.5.7':
+    resolution: {integrity: sha512-Q9R7ybzuHK1phtLicBHgAjQnlJ/dMsXDs2k296PIMLgLqK9aX/f1skOP7F1K/vo7IrSE0jCG3B3XTOtQL1Sb0Q==}
 
   '@roblox-ts/luau-ast@2.0.1':
     resolution: {integrity: sha512-jej2mzRGwhR9wu4woAtgTwqsKADlegZYlQ+M5qVHRojvjoyJVFkLrSbhBKRr8HR+fVW5nCz0qX7kNa0tSpAY+A==}
@@ -6984,6 +7108,20 @@ snapshots:
       '@rbxts/t': 3.2.1
       type-fest: 5.8.0
 
+  '@lisachandra/react-router@1.0.1(@lisachandra/types@0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0))(@rbxts/lemon-signal@1.2.0)(@rbxts/react@17.3.7-ts.2)(@rbxts/services@1.6.0)':
+    dependencies:
+      '@lisachandra/types': 0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0)
+      '@rbxts/lemon-signal': 1.2.0
+      '@rbxts/react': 17.3.7-ts.2
+      '@rbxts/services': 1.6.0
+
+  '@lisachandra/react-template@1.0.0(@lisachandra/types@0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0))(@rbxts/log@0.6.3(patch_hash=bf40352586e3f489dc7073cbc83f556136cb6ce4a630d1578f759750e63a4051))(@rbxts/react@17.3.7-ts.2)(@rbxts/services@1.6.0)':
+    dependencies:
+      '@lisachandra/types': 0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0)
+      '@rbxts/log': 0.6.3(patch_hash=bf40352586e3f489dc7073cbc83f556136cb6ce4a630d1578f759750e63a4051)
+      '@rbxts/react': 17.3.7-ts.2
+      '@rbxts/services': 1.6.0
+
   '@lisachandra/sandcastle@0.2.0':
     dependencies:
       '@ai-hero/sandcastle': 0.10.0
@@ -7019,6 +7157,19 @@ snapshots:
       '@rbxts/matter': https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c)
       '@rbxts/types': 1.0.941
       type-fest: 5.8.0
+
+  '@lisachandra/ui@0.1.1(e4674c837a3de37e29a3e48587146800)':
+    dependencies:
+      '@lisachandra/constant': 0.3.0(@rbxts/iris@2.3.1-ts.1)(@rbxts/luau-polyfill@1.1.3(patch_hash=2f16809e495dcbc78a9f4e0d38ccec26eeb4671cf342a8aee7c995b358d121d1))(@rbxts/services@1.6.0)
+      '@lisachandra/core': 0.1.1(60456dc5796b959a646ec092db50933c)
+      '@lisachandra/matter': 0.1.1(4f5b85274689692e0816555a7ec2913a)
+      '@lisachandra/react-template': 1.0.0(@lisachandra/types@0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0))(@rbxts/log@0.6.3(patch_hash=bf40352586e3f489dc7073cbc83f556136cb6ce4a630d1578f759750e63a4051))(@rbxts/react@17.3.7-ts.2)(@rbxts/services@1.6.0)
+      '@lisachandra/types': 0.1.1(@rbxts/compiler-types@3.0.0-types.0(patch_hash=0d8d8eb4669cdbb61dfb75f418335f53dded4eeb9a5780274767148143949def))(@rbxts/matter@https://codeload.github.com/matter-ecs/matter-types/tar.gz/d37078ce9b4eb6171f46acbe0c0fca55472a640c(patch_hash=121b6c6c98c6a9baf94e0ca06b5e4bfd12f825d4d085450bb348f7084d2ff44c))(@rbxts/types@1.0.941)(type-fest@5.8.0)
+      '@rbxts/pretty-react-hooks': 0.6.4(@rbxts/react-roblox@17.3.7-ts.2(@rbxts/react@17.3.7-ts.2))(@rbxts/react@17.3.7-ts.2)
+      '@rbxts/react': 17.3.7-ts.2
+      '@rbxts/react-roblox': 17.3.7-ts.2(@rbxts/react@17.3.7-ts.2)
+      '@rbxts/rewire': 0.3.0
+      '@rbxts/services': 1.6.0
 
   '@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)':
     dependencies:
@@ -7782,6 +7933,31 @@ snapshots:
       '@rbxts-js/react-is': 17.3.7-ts.1
       '@rbxts-js/roblox-shared': 3.16.0-ts.1
 
+  '@rbxts-js/react-debug-tools@17.3.7-ts.1':
+    dependencies:
+      '@rbxts-js/luau-polyfill': 1.2.3-ts.1
+      '@rbxts-js/react-globals': 17.3.7-ts.1
+      '@rbxts-js/react-reconciler': 17.3.7-ts.1
+      '@rbxts-js/shared': 17.3.7-ts.1
+
+  '@rbxts-js/react-devtools-core@17.3.7-ts.1':
+    dependencies:
+      '@rbxts-js/luau-polyfill': 1.2.3-ts.1
+      '@rbxts-js/react-devtools-shared': 17.3.7-ts.1
+      '@rbxts-js/react-globals': 17.3.7-ts.1
+      '@rbxts-js/react-telemetry': 17.3.7-ts.1
+
+  '@rbxts-js/react-devtools-shared@17.3.7-ts.1':
+    dependencies:
+      '@rbxts-js/luau-polyfill': 1.2.3-ts.1
+      '@rbxts-js/react': 17.3.7-ts.1
+      '@rbxts-js/react-debug-tools': 17.3.7-ts.1
+      '@rbxts-js/react-globals': 17.3.7-ts.1
+      '@rbxts-js/react-is': 17.3.7-ts.1
+      '@rbxts-js/react-reconciler': 17.3.7-ts.1
+      '@rbxts-js/react-roblox': 17.3.7-ts.1
+      '@rbxts-js/shared': 17.3.7-ts.1
+
   '@rbxts-js/react-globals@17.3.7-ts.1':
     dependencies:
       '@rbxts-js/safe-flags': 17.3.7-ts.1
@@ -7810,6 +7986,12 @@ snapshots:
       '@rbxts-js/react-reconciler': 17.3.7-ts.1
       '@rbxts-js/scheduler': 17.3.7-ts.1
       '@rbxts-js/shared': 17.3.7-ts.1
+
+  '@rbxts-js/react-telemetry@17.3.7-ts.1':
+    dependencies:
+      '@rbxts-js/luau-polyfill': 1.2.3-ts.1
+      '@rbxts-js/react-globals': 17.3.7-ts.1
+      '@rbxts-js/safe-flags': 17.3.7-ts.1
 
   '@rbxts-js/react@17.3.7-ts.1':
     dependencies:
@@ -7865,6 +8047,13 @@ snapshots:
       '@rbxts-js/collections': 1.2.3-ts.1
 
   '@rbxts/beacon@2.1.1': {}
+
+  '@rbxts/centurion-ui@1.0.8(@rbxts/centurion@1.0.1(patch_hash=d921b22690ae9df45456a8e5e927e1aace6d344631c9639f0f36b12489e67332))':
+    dependencies:
+      '@rbxts/centurion': 1.0.1(patch_hash=d921b22690ae9df45456a8e5e927e1aace6d344631c9639f0f36b12489e67332)
+      '@rbxts/services': 1.6.0
+      '@rbxts/set-timeout': 1.1.2
+      '@rbxts/vide': 0.5.7
 
   '@rbxts/centurion@1.0.1(patch_hash=d921b22690ae9df45456a8e5e927e1aace6d344631c9639f0f36b12489e67332)':
     dependencies:
@@ -7950,7 +8139,19 @@ snapshots:
     dependencies:
       '@rbxts-js/pretty-format': 3.16.0-ts.1
 
+  '@rbxts/pretty-react-hooks@0.6.4(@rbxts/react-roblox@17.3.7-ts.2(@rbxts/react@17.3.7-ts.2))(@rbxts/react@17.3.7-ts.2)':
+    dependencies:
+      '@rbxts/react': 17.3.7-ts.2
+      '@rbxts/react-roblox': 17.3.7-ts.2(@rbxts/react@17.3.7-ts.2)
+      '@rbxts/ripple': 0.9.3
+      '@rbxts/services': 1.6.0
+      '@rbxts/set-timeout': 1.1.2
+
   '@rbxts/rbxts-hashlib@1.0.2': {}
+
+  '@rbxts/react-devtools-core@17.3.7-ts.2':
+    dependencies:
+      '@rbxts-js/react-devtools-core': 17.3.7-ts.1
 
   '@rbxts/react-globals@17.3.7-ts.2':
     dependencies:
@@ -7985,11 +8186,17 @@ snapshots:
 
   '@rbxts/rewire@0.3.0': {}
 
+  '@rbxts/ripple@0.9.3': {}
+
   '@rbxts/serio@1.2.5(patch_hash=a99304447f32fc933643ee3532fba7e8adaa854cbc267747c60832ceb6fd24e5)': {}
 
   '@rbxts/serio@1.2.7(patch_hash=a99304447f32fc933643ee3532fba7e8adaa854cbc267747c60832ceb6fd24e5)': {}
 
   '@rbxts/services@1.6.0': {}
+
+  '@rbxts/set-timeout@1.1.2':
+    dependencies:
+      '@rbxts/services': 1.6.0
 
   '@rbxts/sift@0.0.11(patch_hash=7b96b6bae29d8b99cfb3e61af05324b11901930a6ca4159d411a19c54d4463a8)': {}
 
@@ -8014,6 +8221,8 @@ snapshots:
   '@rbxts/types@1.0.941': {}
 
   '@rbxts/validate-tree@2.0.2': {}
+
+  '@rbxts/vide@0.5.7': {}
 
   '@roblox-ts/luau-ast@2.0.1': {}
 

@@ -114,6 +114,7 @@ export default isentinel(
 			"src/types/services/**",
 			"submodules/**",
 			".agents/**",
+			".bedrock/**",
 			"src/**/constants.json",
 			"packages/**",
 			"**/barrel.ts",

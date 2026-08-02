@@ -1,16 +1,17 @@
 import { registry } from "@lisachandra/matter";
+import { Components } from "@lisachandra/matter/components";
 import { describe, expect, it } from "@rbxts/jest-globals";
 
-import { PlayerSession } from "./components";
+import "./components";
 
 describe("matter components", () => {
-	it("should export the PlayerSession component", () => {
+	it("should export the Session component", () => {
 		expect.hasAssertions();
-		expect(PlayerSession).never.toBeUndefined();
+		expect(Components.Session).never.toBeUndefined();
 	});
 
-	it("should register the PlayerSession replication codec", () => {
+	it("should register the Session replication codec", () => {
 		expect.hasAssertions();
-		expect(registry.get("PlayerSession")).never.toBeUndefined();
+		expect(registry.get("Session")).never.toBeUndefined();
 	});
 });
