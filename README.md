@@ -9,9 +9,9 @@
 ![Test Coverage][test-coverage-badge] ![Version][version-badge]
 
 [ci-badge]: https://github.com/lisachandra/rbxts-game-template/actions/workflows/ci.yaml/badge.svg
-[test-results-badge]: https://gist.githubusercontent.com/lisachandra/5bb77a16fabee9647b7458db11a62cef/raw/test-results-badge.svg
-[test-coverage-badge]: https://gist.githubusercontent.com/lisachandra/5bb77a16fabee9647b7458db11a62cef/raw/test-coverage-badge.svg
-[version-badge]: https://gist.githubusercontent.com/lisachandra/5bb77a16fabee9647b7458db11a62cef/raw/version-badge.svg
+[test-results-badge]: https://gist.githubusercontent.com/lisachandra/98ea2c22899fecc5bd04aa463fa43c4f/raw/test-results-badge.svg
+[test-coverage-badge]: https://gist.githubusercontent.com/lisachandra/98ea2c22899fecc5bd04aa463fa43c4f/raw/test-coverage-badge.svg
+[version-badge]: https://gist.githubusercontent.com/lisachandra/98ea2c22899fecc5bd04aa463fa43c4f/raw/version-badge.svg
 
 </div>
 
