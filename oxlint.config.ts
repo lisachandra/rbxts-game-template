@@ -1,4 +1,4 @@
-/* oxlint-disable typescript-js/naming-convention, unused-imports/no-unused-vars -- Oxlint config file */
+/* oxlint-disable typescript-js/naming-convention, typescript/no-unsafe-type-assertion, unused-imports/no-unused-vars -- Oxlint config file */
 import {
 	GLOB_EXCLUDE,
 	GLOB_MARKDOWN,
@@ -137,11 +137,11 @@ export default isentinel(
 			"arrow-style/arrow-return-style": "off",
 			"comment-length/limit-multi-line-comments": "off",
 			"comment-length/limit-single-line-comments": "off",
+			"eslint-js/id-length": "off",
 			"eslint-js/no-restricted-syntax": noRestrictedSyntaxRule,
 			"eslint/max-lines": "off",
 			"eslint/max-lines-per-function": "off",
 			"eslint/no-console": "off",
-			"id-length": "off",
 			"jsdoc/convert-to-jsdoc-comments": "off",
 			"no-inline-comments": "off",
 			"perfectionist/sort-array-includes": [
@@ -300,6 +300,9 @@ export default isentinel(
 			"eslint/no-empty-function": "off",
 			"eslint/no-lone-blocks": "off",
 			"eslint/prefer-const": "off",
+			"flawless/arrow-return-style": "off",
+			"flawless/max-lines-per-function": "off",
+			"flawless/prefer-parameter-destructuring": "off",
 			"oxc/no-barrel-file": "off",
 			"react-jsx/no-useless-fragment": "off",
 			"roblox/no-any": "off",
@@ -358,6 +361,17 @@ export default isentinel(
 			"@cspell/spellchecker": "off",
 		},
 	},
+	// Node build scripts overrides
+	{
+		files: ["scripts/**/*"],
+		name: "project/node-scripts",
+		rules: {
+			"flawless/arrow-return-style": "off",
+			"flawless/max-lines-per-function": "off",
+			"import/no-nodejs-modules": "off",
+		},
+	},
+
 	// Markdown/YAML overrides — disable rules that don't work on these file types
 	{
 		files: [GLOB_MARKDOWN, GLOB_YAML],
@@ -373,6 +387,7 @@ export default isentinel(
 		files: ["packages/**/*"],
 		name: "project/packages-overrides",
 		rules: {
+			"eslint-js/id-length": "off",
 			"eslint-js/no-restricted-syntax": noRestrictedSyntaxRule,
 			"typescript/no-extraneous-class": "off",
 			"typescript/no-unnecessary-type-parameters": "off",
@@ -383,6 +398,7 @@ export default isentinel(
 		files: [`!src/${GLOB_SRC}, ${GLOB_SRC}`],
 		name: "project/non-roblox",
 		rules: {
+			"eslint-js/id-length": "off",
 			"eslint-js/no-restricted-syntax": "off",
 			"roblox/lua-truthiness": "off",
 			"roblox/misleading-lua-tuple-checks": "off",

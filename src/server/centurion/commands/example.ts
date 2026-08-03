@@ -1,7 +1,8 @@
 import { store } from "@lisachandra/core/store";
 import { Components } from "@lisachandra/matter";
 import { adminOrDeveloper } from "@lisachandra/platform";
-import { CenturionType, Command, type CommandContext, Register } from "@rbxts/centurion";
+import { CenturionType, Command, Register } from "@rbxts/centurion";
+import type { CommandContext } from "@rbxts/centurion";
 
 @Register()
 export class ExampleCommand {

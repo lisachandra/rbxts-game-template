@@ -74,7 +74,7 @@ configureRuntimeAdapters({
 		onPlayerRemoving: (_world, player) => {
 			Log.Info("Player removed: {Player}", player.Name);
 		},
-		preSpawn: async (_player) => {
+		preSpawn: (_player) => {
 			// TODO: replace with your spawn authorization rules.
 			return [true];
 		},
