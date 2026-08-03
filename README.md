@@ -9,9 +9,10 @@
 ![Test Coverage][test-coverage-badge] ![Version][version-badge]
 
 [ci-badge]: https://github.com/lisachandra/rbxts-game-template/actions/workflows/ci.yaml/badge.svg
-[test-results-badge]: https://gist.githubusercontent.com/lisachandra/5bb77a16fabee9647b7458db11a62cef/test-results-badge.svg
-[test-coverage-badge]: https://gist.githubusercontent.com/lisachandra/5bb77a16fabee9647b7458db11a62cef/test-coverage-badge.svg
-[version-badge]: https://gist.githubusercontent.com/lisachandra/5bb77a16fabee9647b7458db11a62cef/version-badge.svg
+[test-results-badge]: https://gist.githubusercontent.com/lisachandra/5bb77a16fabee9647b7458db11a62cef/raw/test-results-badge.svg
+[test-coverage-badge]: https://gist.githubusercontent.com/lisachandra/5bb77a16fabee9647b7458db11a62cef/raw/test-coverage-badge.svg
+[version-badge]: https://gist.githubusercontent.com/lisachandra/5bb77a16fabee9647b7458db11a62cef/raw/version-badge.svg
+
 </div>
 
 A general-purpose Roblox game template built with roblox-ts, pnpm, the
@@ -100,27 +101,27 @@ rbxts-game-template/
 
 ## Commands
 
-| Task                                | Command           |
-| ----------------------------------- | ----------------- |
-| Setup (submodules + install + build)| `pnpm setup`      |
-| Build                               | `pnpm build`      |
-| Lint                                | `pnpm lint:fix`   |
-| Typecheck                           | `pnpm typecheck`  |
-| Test                                | `pnpm test`       |
-| Test (Studio CLI)                   | `pnpm test:local` |
-| Barrels                             | `pnpm barrels`    |
-| Dev (watch)                         | `pnpm dev`        |
-| Serve to Studio                     | `pnpm serve`      |
+| Task                                 | Command           |
+| ------------------------------------ | ----------------- |
+| Setup (submodules + install + build) | `pnpm setup`      |
+| Build                                | `pnpm build`      |
+| Lint                                 | `pnpm lint:fix`   |
+| Typecheck                            | `pnpm typecheck`  |
+| Test                                 | `pnpm test`       |
+| Test (Studio CLI)                    | `pnpm test:local` |
+| Barrels                              | `pnpm barrels`    |
+| Dev (watch)                          | `pnpm dev`        |
+| Serve to Studio                      | `pnpm serve`      |
 
 Deployment:
 
-| Task                       | Command              |
-| -------------------------- | -------------------- |
-| Build production place     | `pnpm bedrock:build` |
-| Preview resource changes   | `pnpm bedrock:diff`  |
-| Provision resources        | `pnpm bedrock:provision` |
-| Deploy the place           | `pnpm bedrock:deploy` |
-| Publish products           | `pnpm bedrock:publish` |
+| Task                     | Command                  |
+| ------------------------ | ------------------------ |
+| Build production place   | `pnpm bedrock:build`     |
+| Preview resource changes | `pnpm bedrock:diff`      |
+| Provision resources      | `pnpm bedrock:provision` |
+| Deploy the place         | `pnpm bedrock:deploy`    |
+| Publish products         | `pnpm bedrock:publish`   |
 
 ## Testing
 
