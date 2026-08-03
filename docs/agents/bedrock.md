@@ -1,129 +1,99 @@
 # Bedrock Deployment
 
-Bedrock manages Roblox resources through Open Cloud.
-Published GitHub releases trigger production deploy.
+Bedrock manages Roblox resources through Open Cloud
+(`@bedrock-rbx/core` from npm). It builds the place, provisions
+universes/places, manages developer products, and deploys from a
+deterministic `.rbxl`.
 
 ## Rules
 
 - Use Open Cloud. Never use `ROBLOSECURITY`.
-- Pin Bedrock by submodule commit.
-- Build Bedrock in its own workspace during `pnpm submodules`.
-- Keep only `mise run bedrock` public. Keep install/build steps in submodule setup.
-- Build deterministic `.rbxl` before deploy.
+- Keep Bedrock as an npm dependency; do not pin it by submodule.
+- Build a deterministic `.rbxl` before deploy (`.bedrock/build.ts` runs
+  `scripts/bash/setup-place.sh`).
 - Run `diff` before changing Roblox.
 - Deploy only playable, reviewable, rollback-worthy releases.
-- Keep credentials in local `.env` or GitHub secrets. Never commit credentials.
-- Keep one Bedrock state Gist per environment.
+- Keep credentials in local `.env` or GitHub secrets. Never commit
+  credentials.
+- Keep one Bedrock state gist per environment.
 - Bedrock manages product metadata. Server code grants purchases.
+
+## Configuration
+
+`bedrock.config.ts` declares:
+
+- `environments.production` — universe/place IDs and developer-product
+  placeholders
+- `places.start` — place display name and output file
+  (`build/production.rbxl`)
+- `codegen` — enabled, writes type declarations to `src/shared/assets`
+- `state` — gist-backed state; set `gistId` per environment
+
+Replace the TODOs (universe ID, place ID, products, state gist) with your own
+values before deploying.
 
 ## Local setup
 
-Create private GitHub Gist. Create GitHub token with `gist` scope.
+Create a private GitHub gist for Bedrock state. Create a GitHub token with
+the `gist` scope.
 
 Set local `.env`:
 
 ```sh
 BEDROCK_API_KEY="..."
 BEDROCK_GITHUB_TOKEN="..."
-BEDROCK_ENVIRONMENT="production"
-ROBLOX_GLOBAL_ASSETS_PLACE_ID="..."
 ```
 
-Set production universe ID, place ID, and state Gist ID in `bedrock.config.ts`.
-Never commit API keys or tokens.
-
-Build submodules:
+Build the place:
 
 ```sh
-pnpm submodules
-pnpm install --frozen-lockfile
-```
-
-Build production place:
-
-```sh
-ROBLOX_GLOBAL_ASSETS_PLACE_ID=... pnpm build:place:production
+pnpm bedrock:build
 ```
 
 Inspect changes:
 
 ```sh
-pnpm exec bedrock -- diff --env production
+pnpm bedrock:diff
 ```
 
 Deploy after diff review:
 
 ```sh
-pnpm exec bedrock -- deploy --env production
+pnpm bedrock:deploy
 ```
 
-`build:place:production` does four things:
-
-1. Builds Rojo place.
-2. Fetches global-assets place.
-3. Injects global assets.
-4. Writes `build/production.rbxl`.
-
-Production artifact stays separate from Jest `test.rbxl`.
+`bedrock:build` runs Rojo build and writes `build/production.rbxl` via
+`.bedrock/build.ts`.
 
 ## Developer products
 
-Declare products in environment overlay in `bedrock.config.ts`:
+Declare products in the environment overlay in `bedrock.config.ts`:
 
 ```ts
 products: {
-    starterPack: {
-        name: "Starter Pack",
-        description: "A starter bundle.",
-        price: 99,
-        storePageEnabled: true,
-    },
+	starterPack: {
+		name: "Starter Pack",
+		description: "A starter bundle.",
+		price: 99,
+		storePageEnabled: true,
+	},
 },
 ```
 
-Bedrock manages Open Cloud product metadata. Bedrock does not grant purchases.
-Server code handles `MarketplaceService.ProcessReceipt`.
-
-Keep product IDs available to server code. Make receipt granting idempotent.
+Bedrock manages Open Cloud product metadata. Bedrock does not grant
+purchases; server code handles `MarketplaceService.ProcessReceipt` and keeps
+receipt granting idempotent.
 
 ## GitHub Actions
 
-`Deploy Roblox` runs on `release.published` or manual dispatch.
+The badge job in `ci.yaml` updates test, coverage, and version badges in the
+CI badge gist:
 
-Workflow:
+- Repository variable: `CI_BADGE_GIST_ID`
+- Repository secret: `GIST_SECRET` (GitHub token with `gist` scope)
 
-1. Checkout exact release tag.
-2. Initialize submodules.
-3. Run setup; setup builds Bedrock CLI.
-4. Build production `.rbxl`.
-5. Run Bedrock `diff`.
-6. Run Bedrock `deploy`.
-
-Mise exposes only `bedrock` task.
-
-Create protected GitHub environment named `production`.
-
-Set environment secrets:
-
-- `ROBLOX_OPEN_CLOUD_API_KEY`: production Open Cloud key.
-- `BEDROCK_GITHUB_TOKEN`: GitHub token with `gist` scope.
-- `ROBLOX_GLOBAL_ASSETS_PLACE_ID`: global-assets source place ID.
-- `SSH_PRIVATE_KEY`: only when private checkout needs it.
-
-Bedrock universe ID, place ID, and state Gist ID live in `bedrock.config.ts`.
-CI needs no separate Bedrock state-Gist variable.
-
-CI badge Gist ID lives in GitHub Actions variable:
-
-```text
-CI_BADGE_GIST_ID
-```
-
-Badge token remains GitHub Actions secret:
-
-```text
-GIST_SECRET
-```
+Set environment secrets for the test job: `ROBLOX_OPEN_CLOUD_API_KEY`,
+`ROBLOX_PLACE_ID`, and `ROBLOX_UNIVERSE_ID`.
 
 ## Release policy
 
@@ -135,5 +105,4 @@ Preview release:
 pnpm release:dry
 ```
 
-Dispatch release only for playable, reviewable, rollback-worthy milestone.
-Deploy workflow does not create release. Published release starts deploy.
+Dispatch release only for playable, reviewable, rollback-worthy milestones.
