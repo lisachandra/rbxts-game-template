@@ -57,6 +57,18 @@ through.
 - pnpm
 - Git
 
+## Setup Wizard (recommended)
+
+Run the interactive setup wizard instead of configuring by hand:
+
+```bash
+bash scripts/setup-template.sh
+```
+
+It walks you through naming the project, your Roblox universe/place ids and
+Open Cloud keys, the Bedrock/Asphalt keys, CI badge gists and GitHub secrets,
+then runs the toolchain install and `pnpm setup`.
+
 ## Getting Started
 
 ```bash
