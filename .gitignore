@@ -5,6 +5,7 @@
 
 # AI documentation
 .diracrules
+.agents/.skill-lock.json
 
 ### Roblox-TS ###
 

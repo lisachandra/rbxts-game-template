@@ -2,10 +2,6 @@ name: Setup
 description: Setup mise, cache pnpm store, and install dependencies
 
 inputs:
-  pnpm-config-auth:
-    default: ""
-    description: pnpm registry auth JSON
-    required: true
   ref:
     description: Git ref or SHA to use for asset checkout
     required: true
@@ -29,8 +25,12 @@ runs:
         path: ${{ env.STORE_PATH }}
         restore-keys: pnpm-${{ runner.os }}-
 
+    # pnpm no longer expands env vars in a committed project .npmrc, so write
+    # the registry credential to the trusted global config instead.
+    - name: Configure GitHub Packages auth
+      run: pnpm config set "//npm.pkg.github.com/:_authToken" "${{ github.token }}"
+      shell: bash
+
     - name: Install dependencies
       run: PNPM_CONFIG_VERIFY_DEPS_BEFORE_RUN=false pnpm setup
-      env:
-        PNPM_CONFIG__AUTH: ${{ inputs.pnpm-config-auth }}
       shell: bash
