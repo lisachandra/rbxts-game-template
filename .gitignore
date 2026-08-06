@@ -302,11 +302,8 @@ packages/@lisachandra/**/src
 !packages/@lisachandra/**/out
 
 # Sandcastle runtime state
-.sandcastle/logs/
-.sandcastle/plans/
-.sandcastle/state/
-.sandcastle/worktrees/
-.sandcastle/integrations/
+.sandcastle/**
+!.sandcastle/.gitkeep
 
 # Brainstorm prototype generated state
 .superpowers/**/state/
