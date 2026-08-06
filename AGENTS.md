@@ -30,7 +30,8 @@ pnpm setup
 | Build            | `pnpm build`            |
 | Lint             | `pnpm lint:fix`         |
 | Typecheck        | `pnpm typecheck`        |
-| Test             | `pnpm test`             |
+| Test (all)       | `pnpm test:local`        |
+| Test (selective) | `pnpm test --testPathPattern <pattern>` |
 | Slow tests       | `pnpm test:slow`        |
 | Barrels          | `pnpm barrels`          |
 | Release preview  | `pnpm release:dry`      |
@@ -55,8 +56,11 @@ Co-Authored-By: (the agent's name and attribution byline)
 
 ## Verification
 
-- `pnpm barrels`, `pnpm lint:fix`, `pnpm typecheck`, `pnpm build`,
-  `pnpm test (with -- --testPathPattern ...)` OR `pnpm test:local`
+- `pnpm barrels`, `pnpm lint:fix`, `pnpm typecheck`, `pnpm build`
+- Always use the most efficient test option:
+  - selective tests: `pnpm test --testPathPattern <pattern>`
+  - all tests: `pnpm test:local`
+- Never run the full `pnpm test` suite (jest-roblox-cli Studio-backed full runs time out).
 - Report exact tests/tools run and blockers.
 
 ## Project Conventions
