@@ -68,25 +68,25 @@ patchedDependencies:
     rbxts-transformer-flamework: patches/rbxts-transformer-flamework.patch
 
 catalog:
-    "@bedrock-rbx/core": 0.3.4
+    "@bedrock-rbx/core": 0.4.0
     "@commitlint/cli": 20.5.3
     "@commitlint/config-conventional": 20.5.3
     "@commitlint/prompt-cli": 20.5.3
     "@commitlint/types": 20.5.0
     "@flamework/core": 1.3.2
-    "@isentinel/dict-rbxts": 1.0.28
-    "@isentinel/dict-roblox": 1.0.21
-    "@isentinel/dict-wally": 1.0.27
-    "@isentinel/eslint-config": 6.2.0
+    "@isentinel/dict-rbxts": 1.0.30
+    "@isentinel/dict-roblox": 1.0.23
+    "@isentinel/dict-wally": 1.0.29
+    "@isentinel/eslint-config": 6.3.0
     "@isentinel/tsconfig": 1.2.0
     "@lisachandra/constant": 0.3.0
     "@lisachandra/core": 0.1.1
     "@lisachandra/matter": 0.1.1
     "@lisachandra/platform": 0.1.1
-    "@lisachandra/react-router": 1.0.1
+    "@lisachandra/react-router": 1.0.2
     "@lisachandra/test": 0.1.1
-    "@lisachandra/types": 0.1.1
-    "@lisachandra/sandcastle": 0.2.0
+    "@lisachandra/types": 0.1.2
+    "@lisachandra/sandcastle": 0.6.0
     "@lisachandra/ui": 0.1.1
     "@rbxts/centurion": 1.0.1
     "@rbxts/centurion-ui": 1.0.8
@@ -118,14 +118,14 @@ catalog:
     "@rbxts/trash": ^1.0.8
     "@rbxts/types": latest
     "@types/node": 24.19.2
-    "@typescript-eslint/eslint-plugin": 8.72.0
+    "@typescript-eslint/eslint-plugin": 8.72.1
     barrelsby: 2.8.1
     commit-and-tag-version: 12.7.3
     husky: 9.1.7
     io-serve: 1.1.2
     jiti: 2.7.0
-    oxfmt: 0.74.0
-    oxlint: 1.89.0
+    oxfmt: 0.77.0
+    oxlint: 1.92.0
     oxlint-tsgolint: 0.25.0
     rbxts-transformer-xstate: 1.0.0
     rbxts-transformer-flamework: 1.3.2
