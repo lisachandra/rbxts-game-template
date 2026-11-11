@@ -5,7 +5,17 @@
 
 # AI documentation
 .diracrules
+.agents/references
 .agents/.skill-lock.json
+
+# sloptor's per-project incremental cache
+.rotor/
+
+# rur (roblox-ui-renderer) state dir (pnpm ui:render)
+.cache/
+
+# Machine-local mise overrides; mise.toml carries the committed pins.
+mise.local.toml
 
 ### Roblox-TS ###
 

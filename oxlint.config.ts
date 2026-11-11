@@ -302,6 +302,7 @@ export default isentinel(
 			"eslint/prefer-const": "off",
 			"flawless/arrow-return-style": "off",
 			"flawless/max-lines-per-function": "off",
+			"flawless/prefer-expect-assertions-count": "off",
 			"flawless/prefer-parameter-destructuring": "off",
 			"oxc/no-barrel-file": "off",
 			"react-jsx/no-useless-fragment": "off",

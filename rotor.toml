@@ -1,0 +1,7 @@
+#:schema https://raw.githubusercontent.com/howmanyslop/sloptor/main/rotor.schema.json
+
+# Load-bearing: this keeps the plugin pipeline alive, not just Flamework. With
+# no `[flamework]` section here sloptor runs NO plugins at all and still exits 0
+# — the TypeScript transformer plugins below go silently inert, which only the
+# test lane catches.
+[flamework]

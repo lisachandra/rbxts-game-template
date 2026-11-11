@@ -1,6 +1,13 @@
 {
 	"name": "rbxts-game-template",
-	"globIgnorePaths": ["**/package.json", "**/tsconfig.json"],
+	"globIgnorePaths": [
+		"**/package.json",
+		"**/tsconfig.json",
+		"**/*.luau.map",
+		"**/rbxts.copyfiles.json",
+		"**/*.tsbuildinfo.json",
+		"**/rbxts.rojocache.json"
+	],
 	"emitLegacyScripts": false,
 	"tree": {
 		"$className": "DataModel",
@@ -75,15 +82,26 @@
 				"$className": "Folder"
 			}
 		},
+		"HttpService": {
+			"$className": "HttpService",
+			"$properties": {
+				"HttpEnabled": true
+			}
+		},
 		"SoundService": {
 			"$properties": {
-				"RespectFilteringEnabled": true
+				"RespectFilteringEnabled": true,
+				"VolumetricAudio": "Enabled"
 			},
 			"Sounds": {
 				"$className": "Folder"
 			}
 		},
 		"StarterPlayer": {
+			"$properties": {
+				"CreateDefaultPlayerModule": false,
+				"EnableMouseLockOption": false
+			},
 			"StarterCharacterScripts": {
 				"$className": "StarterCharacterScripts",
 				"Animate": {

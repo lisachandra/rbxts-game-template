@@ -28,6 +28,34 @@ Use when change touches gameplay, ECS, UI, networking, authority, replication, d
 | Rendering/memory/geometry/leaks    | Assistant Scene Analysis or `SceneAnalysisService`               |
 | Exact API context                  | Assistant Docs Search or `./creator-docs`                        |
 
+## Offline Lanes (`pnpm test`, `pnpm ui:render`)
+
+`pnpm test` runs compiled specs inside `ree` (roblox-engine-emulator) by default — offline, no
+Studio roundtrip, with Istanbul coverage mapped back to TypeScript by `@isentinel/jest-roblox`.
+The full run includes specs listed in `slowTestPaths`.
+
+Specs with engine parity gaps (`reeParityPaths` in `jest.config.ts`) auto-route to the Studio
+runner when targeted with `pnpm test --testPathPattern "<pattern>"`. The parity ledger is
+`docs/agents/offline-runtime-spike.md`.
+
+`pnpm ui:render <name>` rasterises a UI story through `roblox-ui-renderer` (`rur`). Register
+stories in `scripts/emulator/ui-renders.json`; run `pnpm build` and `pnpm ui:templates` first.
+Output lands in `build/ui-renders/<name>/`. Trust `rur` for layout and geometry parity; verify
+final polish, input, and effects in Studio.
+
+## Studio Unreachable From `run_in_roblox`
+
+The Studio lane can fail with:
+
+```
+[ERROR run_in_roblox] receiving on a closed channel
+thread '<unnamed>' panicked at 'called `Result::unwrap()` on an `Err` value: Timeout reached while waiting for Roblox Studio to come online', src/main.rs:75:9
+```
+
+On Windows this is usually the NAT driver holding a stale socket. Run `net stop winnat` then
+`net start winnat` in PowerShell, reopen Studio, and retry. A resumed run re-executes
+`setupCommands`.
+
 ## Workflow Patterns
 
 - Cross-device multiplayer: device profiles plus multiplayer test plus screenshots.
@@ -68,7 +96,7 @@ Use when change touches gameplay, ECS, UI, networking, authority, replication, d
 
 ## Agent Verification Pattern
 
-1. Run repo checks first: `pnpm test` for runtime/gameplay changes, plus `pnpm lint` when useful.
+1. Run repo checks first: `pnpm build` then `pnpm test` (targeted during implementation with `--testPathPattern "<pattern>"`, full on review) — the offline emulator lane — plus `pnpm lint` when useful. Specs with engine parity gaps (`reeParityPaths` in `jest.config.ts`) auto-route to the Studio runner when targeted.
 2. If Studio available, ask human/Assistant for runtime evidence automated Jest cannot cover.
 3. UI: device simulation plus virtual input plus screenshots.
 4. Networking/authority: multi-client `StudioTestService`; include join/leave when relevant.

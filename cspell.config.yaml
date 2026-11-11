@@ -74,6 +74,7 @@ words:
     - rojo
     - scriptable
     - serdes
+    - sloptor
     - setfenv
     - setmetatable
     - spellchecker

@@ -124,6 +124,15 @@ jobs:
       - name: Lint
         run: pnpm lint
 
+      - name: Lint fix-mode drift guard
+        run: |
+          pnpm lint:fix
+          if ! git diff --exit-code -- . ':(exclude)places' ':(exclude)submodules'; then
+            echo "::error::pnpm lint:fix modified tracked files; commit the canonical format or fix the drift source. Files:"
+            git diff --name-only -- . ':(exclude)places' ':(exclude)submodules'
+            exit 1
+          fi
+
   test:
     needs: [lint]
     runs-on: ubuntu-latest
@@ -162,10 +171,6 @@ jobs:
           set -o pipefail
           pnpm install
           pnpm -r --include-workspace-root --stream --workspace-concurrency=1 test --coverageReporters json-summary --coverageReporters json | tee test_results.txt
-        env:
-          ROBLOX_OPEN_CLOUD_API_KEY: ${{ secrets.ROBLOX_OPEN_CLOUD_API_KEY }}
-          ROBLOX_PLACE_ID: ${{ secrets.ROBLOX_PLACE_ID }}
-          ROBLOX_UNIVERSE_ID: ${{ secrets.ROBLOX_UNIVERSE_ID }}
 
       - id: extract_coverage
         name: Extract coverage

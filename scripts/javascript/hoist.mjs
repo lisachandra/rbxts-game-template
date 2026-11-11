@@ -204,6 +204,22 @@ function getPnpmWorkspacePatterns() {
 	return patterns;
 }
 
+function parseJsonArrayOutput(output) {
+	/*
+	 * pnpm occasionally prints progress banners (for example "Installing
+	 * config dependencies...") on stdout before the JSON array, which crashes
+	 * JSON.parse. Recover by trimming to the outermost JSON array.
+	 */
+	const text = String(output);
+	const start = text.indexOf("[");
+	const end = text.lastIndexOf("]");
+	if (start === -1 || end === -1 || end < start) {
+		throw new Error(`pnpm output did not contain a JSON array: ${text.slice(0, 200)}`);
+	}
+
+	return JSON.parse(text.slice(start, end + 1));
+}
+
 function getWorkspaceDirectories() {
 	const output = execFileSync("pnpm", ["list", "-r", "--depth", "-1", "--json"], {
 		cwd: rootDirectory,
@@ -211,7 +227,7 @@ function getWorkspaceDirectories() {
 		stdio: ["ignore", "pipe", "pipe"],
 	});
 
-	const parsed = JSON.parse(output);
+	const parsed = parseJsonArrayOutput(output);
 	if (!Array.isArray(parsed)) {
 		return [];
 	}
@@ -336,6 +352,20 @@ function getStageEntriesForPackage(packageJson) {
 		}
 	}
 
+	/*
+	 * When the package entry points into a compiled output directory (for example
+	 * out/init.luau), stage the whole directory. Compiled modules import internal
+	 * files that are not necessarily listed in exports (for example inbound-policy,
+	 * request-tracker), and a partial stage causes infinite WaitForChild at runtime.
+	 */
+	const mainEntry = normalizePackageRelativePath(packageJson.main);
+	if (mainEntry !== undefined) {
+		const mainDirectory = path.posix.dirname(mainEntry);
+		if (mainDirectory !== ".") {
+			entries.add(mainDirectory);
+		}
+	}
+
 	if (Array.isArray(packageJson.files)) {
 		for (const fileEntry of packageJson.files) {
 			const normalized = normalizePackageRelativePath(fileEntry);
@@ -414,7 +444,7 @@ function readDependencyTree(packageName) {
 		{ cwd: rootDirectory, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] },
 	);
 
-	const parsed = JSON.parse(output);
+	const parsed = parseJsonArrayOutput(output);
 	return Array.isArray(parsed) ? parsed[0] : undefined;
 }
 
@@ -744,19 +774,21 @@ function main() {
 		const matchingPackages = [
 			...collectAllDependencyNames(dependencyTree, new Set(), true, mode),
 		]
-			.filter(
-				(dependencyName) =>
+			.filter((dependencyName) => {
+				return (
 					patterns.length === 0 ||
-					patterns.some(({ regex }) => regex.test(dependencyName)),
-			)
-			.filter(
-				(dependencyName) =>
-					!workspaceMap.has(dependencyName) || directDependencyNames.has(dependencyName),
-			)
+					patterns.some(({ regex }) => regex.test(dependencyName))
+				);
+			})
+			.filter((dependencyName) => {
+				return (
+					!workspaceMap.has(dependencyName) || directDependencyNames.has(dependencyName)
+				);
+			})
 			.sort();
-		const linkedForWorkspace = matchingPackages.filter((dependencyName) =>
-			syncPackageIntoWorkspace(workspacePath, dependencyName, workspaceMap),
-		).length;
+		const linkedForWorkspace = matchingPackages.filter((dependencyName) => {
+			return syncPackageIntoWorkspace(workspacePath, dependencyName, workspaceMap);
+		}).length;
 		totalLinked += linkedForWorkspace;
 
 		console.log(

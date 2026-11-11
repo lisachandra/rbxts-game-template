@@ -1,0 +1,4 @@
+{
+	"$comment": "Named renders for `pnpm ui:render <name>` (scripts/javascript/uiRender.mjs). `story` is the TypeScript source; the script renders its compiled Luau twin under out/, so run `pnpm build` first. Extra rur flags can be passed through after the name.",
+	"renders": {}
+}

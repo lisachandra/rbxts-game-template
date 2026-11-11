@@ -1,0 +1,96 @@
+{
+	"name": "rbxts-game-template",
+	"emitLegacyScripts": false,
+	"globIgnorePaths": [
+		"**/*.spec.*",
+		"**/package.json",
+		"**/tsconfig.json",
+		"**/*.luau.map",
+		"**/rbxts.copyfiles.json",
+		"**/*.tsbuildinfo.json",
+		"**/rbxts.rojocache.json"
+	],
+	"tree": {
+		"$className": "DataModel",
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"Animations": {
+				"$className": "Folder",
+				"Tools": {
+					"$className": "Folder"
+				}
+			},
+			"Models": {
+				"$className": "Folder",
+				"Items": {
+					"$className": "Folder"
+				}
+			},
+			"Tools": {
+				"$className": "Folder"
+			},
+			"UI": {
+				"$className": "Folder"
+			},
+			"VFX": {
+				"$className": "Folder"
+			},
+			"TS": {
+				"$className": "Folder",
+				"client": {
+					"$path": "out/client"
+				},
+				"rbxts_include": {
+					"$className": "Folder",
+					"node_modules": {
+						"$path": "packages/@internal/shared/node_modules"
+					}
+				},
+				"shared": {
+					"$path": "out/shared"
+				}
+			}
+		},
+		"ServerScriptService": {
+			"$className": "ServerScriptService",
+			"$properties": {
+				"LoadStringEnabled": true
+			},
+			"TS": {
+				"$className": "Folder",
+				"rbxts_include": {
+					"$className": "Folder",
+					"node_modules": {
+						"$path": "packages/@internal/server/node_modules"
+					}
+				},
+				"server": {
+					"$path": "out/server"
+				}
+			}
+		},
+		"HttpService": {
+			"$className": "HttpService",
+			"$properties": {
+				"HttpEnabled": true
+			}
+		},
+		"SoundService": {
+			"$properties": {
+				"RespectFilteringEnabled": true,
+				"VolumetricAudio": "Enabled"
+			},
+			"Sounds": {
+				"$className": "Folder"
+			}
+		},
+		"Workspace": {
+			"$properties": {
+				"AuthorityMode": "Server",
+				"FilteringEnabled": true,
+				"SignalBehavior": "Deferred",
+				"StreamingEnabled": true
+			}
+		}
+	}
+}

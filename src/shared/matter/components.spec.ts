@@ -8,11 +8,13 @@ import "./components";
 describe("matter components", () => {
 	it("should export the Session component", () => {
 		expect.hasAssertions();
+
 		expect(Components.Session).never.toBeUndefined();
 	});
 
 	it("should register the Session replication codec", () => {
 		expect.hasAssertions();
+
 		expect(registry.get("Session")).never.toBeUndefined();
 	});
 });

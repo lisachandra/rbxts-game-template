@@ -1,4 +1,16 @@
 {
+	"bundle": {
+		"require_mode": {
+			"name": "hybrid",
+			"convert_ts_imports": true,
+			"rojo_sourcemap": "./sourcemap.json",
+			"sources": {
+				"out": "./out",
+				"node_modules": "./node_modules"
+			}
+		},
+		"excludes": ["node_modules/**", "out/include/**", "out/test/**"]
+	},
 	"generator": "readable",
 	"rules": [
 		{

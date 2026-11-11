@@ -1,15 +1,21 @@
 {
 	"extends": "./tsconfig.build.json",
 	"compilerOptions": {
+		// The game emits only Luau. `composite` existed to drive the native
+		// type-checker's `--build`; `sloptor check` replaces it, and `composite`
+		// is what makes `declaration: false` illegal (TS6304).
+		"composite": false,
+		"declaration": false,
 		"typeRoots": [
 			"${configDir}/node_modules/@rbxts",
+			"${configDir}/node_modules/@kyrorblx",
 			"${configDir}/node_modules/@flamework",
 			"${configDir}/node_modules/@nrbx",
 			"${configDir}/node_modules/@lisachandra"
 		],
 		"plugins": [
 			{
-				"transform": "rbxts-transformer-flamework"
+				"transform": "rbxts-transformer-xstate"
 			}
 		]
 	},
