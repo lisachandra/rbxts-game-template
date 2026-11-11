@@ -33,9 +33,11 @@ darwin-arm64 = { asset_pattern = "*darwin-arm64.tar.gz" }
 [tools."github:lisachandra/darklua"]
 version = "0.19.0"
 
+# Both platforms ship `.zip` — the fork has no `.tar.gz` assets, so a
+# `.tar.gz` pattern fails `mise install` on Linux with "No matching asset".
 [tools."github:lisachandra/darklua".platforms]
 windows-x64 = { asset_pattern = "*windows-x86_64*.zip" }
-linux-x64 = { asset_pattern = "*linux-x86_64*.tar.gz" }
+linux-x64 = { asset_pattern = "*linux-x86_64*.zip" }
 
 # ree (roblox-engine-emulator) builds from a release fork: tags carry the
 # upstream commit the binaries were cut from; scripts/emulator/reflection.json
